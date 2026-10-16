@@ -1,0 +1,32 @@
+{
+  "status": "cpu_checks_passed_gpu_acceptance_pending",
+  "python": "3.10.20",
+  "versions": {
+    "numpy": "1.26.4",
+    "tensorflow": "2.15.1",
+    "sionna": "0.19.2",
+    "matplotlib": "3.10.9",
+    "pytest": "8.4.2"
+  },
+  "tests": {
+    "passed": 22,
+    "failed": 0,
+    "scope": "config, batch order, stopping/freeze control, restricted input, integer counts, artifact hashes, semantic fingerprints, PEBS; dataset suite planning and manifest isolation"
+  },
+  "installation": "built wheel installed in isolated venv using existing reference numerical dependencies; not a clean GPU installation test",
+  "installed_package_import": true,
+  "figures": {
+    "png": 45,
+    "pdf": 45,
+    "source": "measured CSVs; installed wheel"
+  },
+  "checkpoints": {
+    "readable": true,
+    "online_optimizer_iterations_zero": true,
+    "gpu_forward_validated": false
+  },
+  "repository_license": "pending_author_selection",
+  "specialized_adapters": "see docs/COVERAGE.md",
+  "data_distribution": "generation scripts; no raw dataset upload planned",
+  "dataset_generation_gpu_validated": false
+}

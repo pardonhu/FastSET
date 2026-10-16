@@ -1,0 +1,44 @@
+[
+  {
+    "source": "thunderset/link.py",
+    "destination": "src/fastset/link.py",
+    "definitions_equal": true,
+    "normalization": "import namespace only; whitespace ignored"
+  },
+  {
+    "source": "thunderset/generator.py",
+    "destination": "src/fastset/generator.py",
+    "definitions_equal": true,
+    "normalization": "import namespace only; whitespace ignored"
+  },
+  {
+    "source": "portable/thunderset_remote/models/grid_models.py",
+    "destination": "src/fastset/models/grid.py",
+    "definitions_equal": true,
+    "normalization": "import namespace only; whitespace ignored"
+  },
+  {
+    "source": "ablation_fixed864/joint.py",
+    "destination": "src/fastset/joint.py",
+    "definitions_equal": true,
+    "normalization": "import namespace only; whitespace ignored"
+  },
+  {
+    "source": "exp_backbone/models.py",
+    "destination": "src/fastset/backbones/models.py",
+    "definitions_equal": true,
+    "normalization": "import namespace only; whitespace ignored"
+  },
+  {
+    "source": "exp_backbone/spec.py",
+    "destination": "src/fastset/backbones/spec.py",
+    "definitions_equal": true,
+    "normalization": "import namespace only; whitespace ignored"
+  },
+  {
+    "source": "rt_extension/interference.py",
+    "destination": "src/fastset/rt/interference.py",
+    "definitions_equal": true,
+    "normalization": "import namespace only; whitespace ignored"
+  }
+]

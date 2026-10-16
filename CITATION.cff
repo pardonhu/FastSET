@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite the FastSET paper when its final bibliographic record is available; this entry currently describes the software release candidate."
+type: software
+title: "FastSET: Fast Sequential Retraining to Accelerate Online Adaptation for Neural Receivers"
+version: 0.1.0-rc1
+repository-code: "https://github.com/pardonhu/FastSET"
+authors:
+  - family-names: Hu
+    given-names: Facheng
+  - family-names: Li
+    given-names: Yunzhe
+  - family-names: Zhu
+    given-names: Hongzi
+  - family-names: Wang
+    given-names: Xudong
+

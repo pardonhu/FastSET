@@ -1,0 +1,7 @@
+scenario,method,target_reached,iterations,source,original_training_seconds,total_seconds,qualified
+A2B,FastSET,True,1,approvedPEBSreference,0.11672377999639139,0.1181350949964326,True
+A2B,CNN,True,50,approvedPEBSreference,10.123988562976592,10.196998199982772,True
+A2C,FastSET,True,6,sameWSL3repeat,0.7997444600187009,0.8059559390194408,True
+A2C,CNN,True,84,sameWSL3repeat,17.63050178598496,17.719502427980842,True
+B2C,FastSET,True,2,sameWSL3repeat,0.24687575899997682,0.24920195299955594,True
+B2C,CNN,True,92,sameWSL3repeat,19.062867062999544,19.16454806899776,True

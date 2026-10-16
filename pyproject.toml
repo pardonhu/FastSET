@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fastset-research"
+version = "0.1.0rc1"
+description = "Reproducible sequential adaptation experiments for neural receivers"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+dependencies = ["numpy==1.26.4", "matplotlib>=3.7,<4"]
+
+[project.optional-dependencies]
+gpu = ["tensorflow[and-cuda]==2.15.1", "sionna==0.19.2"]
+test = ["pytest>=7,<9"]
+dev = ["black==24.10.0"]
+
+[project.scripts]
+fastset = "fastset.cli:main"
+
+[project.urls]
+Repository = "https://github.com/pardonhu/FastSET"
+Issues = "https://github.com/pardonhu/FastSET/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.black]
+target-version = ["py310"]
+line-length = 100
+

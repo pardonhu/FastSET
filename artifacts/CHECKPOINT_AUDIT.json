@@ -1,0 +1,17 @@
+{
+  "d8_w64": {
+    "optimizer_iterations": {
+      "dem_optimizer/_iterations/.ATTRIBUTES/VARIABLE_VALUE": 0,
+      "est_optimizer/_iterations/.ATTRIBUTES/VARIABLE_VALUE": 0
+    },
+    "tensor_count": 534,
+    "readable": true
+  },
+  "CNN": {
+    "optimizer_iterations": {
+      "cnn_optimizer/_iterations/.ATTRIBUTES/VARIABLE_VALUE": 0
+    },
+    "tensor_count": 370,
+    "readable": true
+  }
+}

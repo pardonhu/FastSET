@@ -1,0 +1,90 @@
+[
+  {
+    "source": "thunderset/runtime.py",
+    "source_sha256": "d6b28aa865680e5f722b418e2d6ee9a5330a0ae47002025429bd7cdc19627083",
+    "destination": "src/fastset/runtime.py",
+    "sha256": "5dc0fd1557ae01d229ae727317f30e018178a5e4d438fd322472ed8dccb6558b",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "thunderset/link.py",
+    "source_sha256": "3a31780820f3e0a0f2543fab87ac888a2496a2421713b42a010a4fad485d0c0d",
+    "destination": "src/fastset/link.py",
+    "sha256": "4ddabcb764b82b8f4118b84d28af882ca0243b541139e40e9e848247603692e0",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "thunderset/generator.py",
+    "source_sha256": "3a2fbefbf87ec8b6328b42c489c991bebdb81235aeefd5087567c351158ae7ce",
+    "destination": "src/fastset/generator.py",
+    "sha256": "56a3c20244fcba0f4f78958cf0406800278712a063372c1c830398b5b72438bc",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "thunderset/data.py",
+    "source_sha256": "f9d88338250e0b61607b6ace0e2ca930958e05287122d870e521c5d6b8115f3c",
+    "destination": "src/fastset/data.py",
+    "sha256": "6e4230eaf91185c30fd9768e4c3ba8316f72bdfc41615dfc3fdeb53bc963510b",
+    "transform": "Keep restricted loader and integer counts; remove obsolete case loader; check container type before iteration",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "portable/thunderset_remote/remote_exp/common.py",
+    "source_sha256": "050f6d9509c2eb55bdc47255a7478b4bfb21a8d475a33f3dd6fe6d21dee24b60",
+    "destination": "src/fastset/common.py",
+    "sha256": "0f83a26ad1829520040f4548da2a1b8f243ad12b25506bef0793a7af51ae0fe7",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "portable/thunderset_remote/remote_exp/bootstrap.py",
+    "source_sha256": "92427c275a0bdbd8510e76ded3e92b0f41282bd82e7efdca9cb72084dbf3f836",
+    "destination": "src/fastset/bootstrap.py",
+    "sha256": "5912944404c1c720c01327e1d8f873189262cbf1e8e27fd21aa1c6bca7bb8673",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "portable/thunderset_remote/models/grid_models.py",
+    "source_sha256": "5dbeb4ee6e19c349d5d184c511993b843cf551dbf8d6db795bab705f0f96c30c",
+    "destination": "src/fastset/models/grid.py",
+    "sha256": "a96fae2e45ae985deda195ef60ed098b6664f767d5ee5f3e57ca4ec746aa210a",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "ablation_fixed864/joint.py",
+    "source_sha256": "a106556dff0d2c56794a6e55703f3ba0364e3cb6e61e0792dba538fa35ba1f27",
+    "destination": "src/fastset/joint.py",
+    "sha256": "451aa2a79bb9d52ab4917ac240a9e4c89564ce318aa2e6a8626d6a2543065bba",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "portable/thunderset_remote/remote_exp/model_runtime.py",
+    "source_sha256": "46ef1f602c2f7f1f434181bf924c87914cb1cb9397fc98900fb7eb523e351849",
+    "destination": "src/fastset/model_runtime.py",
+    "sha256": "5f219ba109bcae608313a50c7b1f8d40ae117e9e565ee63df5a4239fc8c07fd8",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "exp_backbone/models.py",
+    "source_sha256": "8489bae0d7cf831449da0196894b930e9a57878ec8b55ff7d737684958e6a210",
+    "destination": "src/fastset/backbones/models.py",
+    "sha256": "62127afd2f06329368f326656effd6c2c4f7ef9165de5175298ef859981c426c",
+    "transform": "byte-for-byte; shared library only, specialized experiment CLI not yet ported",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "exp_backbone/spec.py",
+    "source_sha256": "63280ff1b10ba9b288ec62de8aff8f9c502aae8f508cf12800f0002b7ccc5357",
+    "destination": "src/fastset/backbones/spec.py",
+    "sha256": "686d3f07ea831a1a340dae2057551d5f974711d8e283cb23bbe9ef54e2a294a9",
+    "transform": "byte-for-byte; shared library only, specialized experiment CLI not yet ported",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  },
+  {
+    "source": "rt_extension/interference.py",
+    "source_sha256": "c0e92bd3988c8df9ac626a16d2b85f5b45c7ece58468cb59de969de426c16901",
+    "destination": "src/fastset/rt/interference.py",
+    "sha256": "50e6394d85a2a7492ea3d024be35edccaefe24a86f749e63793a862e358ee53e",
+    "transform": "byte-for-byte; shared library only, specialized experiment CLI not yet ported",
+    "formatting": "Black 24.10.0, Python3.10 target; computational definitions preserved except documented adapters"
+  }
+]

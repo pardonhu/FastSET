@@ -1,0 +1,13 @@
+{
+  "seed": 56,
+  "role": "validation",
+  "tdl_model": "C",
+  "delay_spread_ns": 1000,
+  "min_speed_m_s": 0,
+  "max_speed_m_s": 10,
+  "snrs_db": [
+    12
+  ],
+  "batches_per_snr": 100,
+  "batch_size": 32
+}

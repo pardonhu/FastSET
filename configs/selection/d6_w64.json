@@ -1,0 +1,27 @@
+{
+  "seed": 42,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "adam_epsilon": 1e-07,
+  "method": "fastset",
+  "architecture": {
+    "depth": 6,
+    "width": 64
+  },
+  "pretrain": {
+    "mode": "sequential",
+    "est_epochs": 5,
+    "dem_epochs": 10,
+    "joint_epochs": 0,
+    "cnn_epochs": 0
+  },
+  "online": {
+    "est_iterations": 5,
+    "dem_iterations": 20,
+    "joint_iterations": 0,
+    "cnn_iterations": 0,
+    "early_stop": true
+  },
+  "batch_order": "restart_each_stage",
+  "target_ber": 0.0002
+}

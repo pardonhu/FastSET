@@ -1,0 +1,210 @@
+[
+  {
+    "path": "artifacts/tables/ablation_iterations.csv",
+    "sha256": "40b3c9dbaf09efa05cf9357f7bedd3a4fe533525c5a309fc2abe7cb2c5ae3b6d",
+    "source_archive": "results/ablation_cnn_budget864_20261016/resident_with_cnn/all_iterations.csv",
+    "source_sha256": "6a77185443616439949d7b9cca55ed9297a95231c1afd2bd0d51c99cf98bbc1b",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 680
+  },
+  {
+    "path": "artifacts/tables/ablation_thresholds.csv",
+    "sha256": "ef2820a434acc7c5743fe3330a4a20d672c4b23ef8287e55595b485cbd716918",
+    "source_archive": "results/ablation_cnn_budget864_20261016/resident_with_cnn/threshold_summary.csv",
+    "source_sha256": "b77d2a962cf386fe3db7c09c9af2f9dc2549c4683b8203d4e98c7f4dcd0fa307",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 20
+  },
+  {
+    "path": "artifacts/tables/main_plotted_points.csv",
+    "sha256": "9ca54c53ba7457321c78236c559692ec982f49ca0515cabaf79edf5854fafa22",
+    "source_archive": "results/paper/review_v2_20261016/main/plotted_points.csv",
+    "source_sha256": "0d92fce94b0023a99bd685b40dccb6673c8d63d343f81968d13787febcfaaa86",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 715
+  },
+  {
+    "path": "artifacts/tables/misc_plotted_points.csv",
+    "sha256": "0f8e14915452faf4e18abca21a06785861e1dc6ceaf4aded775174d704464e2b",
+    "source_archive": "results/paper/review_v2_20261016/misc/plotted_points.csv",
+    "source_sha256": "e58c9cbbd9ba75851e98957dcfe039731e7e5db04a324ad2fcffe6d945a2a459",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 1493
+  },
+  {
+    "path": "artifacts/tables/rt_ber_curves.csv",
+    "sha256": "648282507a2af420351fbe57fb99a75dd09edf728931ddfa2f7257504312e29e",
+    "source_archive": "results/paper/review_v2_20261016/rt/data/ber_curves.csv",
+    "source_sha256": "bab5298b9832aef8ba42619272fa04d1452ae621244bc8d95e4d0a6595a19415",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 420
+  },
+  {
+    "path": "artifacts/tables/timing_summary.csv",
+    "sha256": "31f9e6dac6533535410401ef0a8745945527c073141baebf56f4b4104122d1de",
+    "source_archive": "results/paper/review_v2_20261016/timing/summary.csv",
+    "source_sha256": "e564aa19d2f982e9f9ca63b0f58c11d0456dd65d93be536f1ca3638ae5c46dae",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 4
+  },
+  {
+    "path": "artifacts/tables/timing_all_repeats.csv",
+    "sha256": "1dafb86d135abad7d75e30bad6b8c73c50fbabc60754a77eccac6dc70da0b703",
+    "source_archive": "results/paper/review_v2_20261016/timing/all_repeats.csv",
+    "source_sha256": "5bf11feeb0b5494d0e7903cbcf48a0806f074f84c8fcb063ab6272c1645b05c9",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 12
+  },
+  {
+    "path": "artifacts/tables/pebs_alpha.csv",
+    "sha256": "226a614fefc91ba99fff39ca973c9254c44960fb43da963aab620769ef584bdf",
+    "source_archive": "results/paper/final_resident864_20261016/tables/pebs_alpha.csv",
+    "source_sha256": "53ec883c157813e0087d066081ed4229f15167b7d024452e1e2bd0975222e1f0",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 40040
+  },
+  {
+    "path": "artifacts/tables/rt_delay_all.csv",
+    "sha256": "945286eb6b50979aa1544b6b7f82d941ee0eef0774b2569ab49c4b9c1d9ead6b",
+    "source_archive": "results/paper/final_resident864_20261016/tables/rt_delay_all.csv",
+    "source_sha256": "e236068aab0e4e48a030ef2cd30d3168cb90b4147357d00e32fb8e64b7bdfa26",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 8
+  },
+  {
+    "path": "artifacts/tables/main_adaptation_table.csv",
+    "sha256": "815031350cf195eaa7d04d4b48adabff8a21f74246cf22b151f851584e500e17",
+    "source_archive": "results/paper/final_resident864_20261016/tables/main_adaptation_table.csv",
+    "source_sha256": "266ee156395b61a73ad9c5a234e0148c7dcc487341c528c4c089789174ed00cd",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 2
+  },
+  {
+    "path": "artifacts/tables/transition_times.csv",
+    "sha256": "4c62991ade80fc6655be8c862746009ec1a66cf1e3e4abbc953590d1da141560",
+    "source_archive": "results/paper/final_resident864_20261016/tables/transition_times.csv",
+    "source_sha256": "07350e6e1b343cbf4356f0a234cdadbc87557e7b1a0c7d7decefb175116b872f",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 6
+  },
+  {
+    "path": "artifacts/tables/backbone_time_curves.csv",
+    "sha256": "45613115cf848c2681659d47e769b79a5626020be7f79330df4cd568a218fb77",
+    "source_archive": "results/paper/final_resident864_20261016/tables/backbone_time_curves.csv",
+    "source_sha256": "2c61ac6abe2a42a391f7fccd8383bb7479c3007c9d4d30994caafd963ec1acfc",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 734
+  },
+  {
+    "path": "artifacts/tables/delay_time_comparison.csv",
+    "sha256": "c2d449bcc67bfdeb8a0f7ddf37c25019ef03345faeda22e766b52939dd92bd26",
+    "source_archive": "results/paper/final_resident864_20261016/tables/delay_time_comparison.csv",
+    "source_sha256": "1aa4ef9aae797dd2ef0391616a6bff6220111f5f5d1875a00277f70c7d528af8",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 3
+  },
+  {
+    "path": "artifacts/tables/transition_speedup.csv",
+    "sha256": "72acd25bf5a0985051ca84177e81fcd75af7f838e12b96987bf04b52cfd28e36",
+    "source_archive": "results/paper/final_resident864_20261016/tables/transition_speedup.csv",
+    "source_sha256": "2242d69e6d9d4044043a0b5c60a0bc6e97cfed0329d3c30f85d89cae9459e7d2",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 3
+  },
+  {
+    "path": "artifacts/tables/pebs_first_hit.csv",
+    "sha256": "ea3cecae8aee188a2cbcfb8d60b41df1f60103246097ff6e3b92622f26c690a2",
+    "source_archive": "results/paper/final_resident864_20261016/tables/pebs_first_hit.csv",
+    "source_sha256": "d7645aa599560c111c6c0a8dac2dec1625bb90d8f1e790498f5d5b6ba624356b",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 41
+  },
+  {
+    "path": "artifacts/tables/backbone_time_summary.csv",
+    "sha256": "c7ce8b9ab1b0621d00e6bb7cb510f0ac6f32d4bfedaa3b9b73465386b36e0f6b",
+    "source_archive": "results/paper/final_resident864_20261016/tables/backbone_time_summary.csv",
+    "source_sha256": "d48f43a51be0be67fde35c7df7674966b7b474b97381b18d7bcb57edd5a46ea0",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 4
+  },
+  {
+    "path": "artifacts/tables/rt_timing.csv",
+    "sha256": "adcc8c460c55b926a146b201d09a9c0b7c57e4dbdfa935e81f456bbd14034026",
+    "source_archive": "results/paper/final_resident864_20261016/tables/rt_timing.csv",
+    "source_sha256": "663126fb5ead26883e7b2603e01a7109aec2a10929cf27ec91786f0362a8e24b",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 14
+  },
+  {
+    "path": "artifacts/tables/timing_component_sources.csv",
+    "sha256": "c20bb84baa72eb119bcb2bce41aaf7def2fadbc3d35c5a559d7d13bfda4f9ea8",
+    "source_archive": "results/paper/final_resident864_20261016/tables/timing_component_sources.csv",
+    "source_sha256": "20cc32cbb4831bcd808b1b84c70ccf5548c0da412cb8abfe88e25d6b38aa2462",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 77
+  },
+  {
+    "path": "artifacts/tables/main_adaptation_curve.csv",
+    "sha256": "5c2438380367f723276d926db8eb39acf6b8a88b3da67719f789174306fd5d6e",
+    "source_archive": "results/paper/final_resident864_20261016/tables/main_adaptation_curve.csv",
+    "source_sha256": "9fc2a9240d435deedd1dab50472e05b657091aad3bd4f1dfa327db15ff96e112",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 53
+  },
+  {
+    "path": "artifacts/tables/rt_delay_ber.csv",
+    "sha256": "10d7fa1c315505a98741a4684749c8885f2aed8d0df5df40ab372a4987d2f414",
+    "source_archive": "results/paper/final_resident864_20261016/tables/rt_delay_ber.csv",
+    "source_sha256": "d6ce7b142bf122ea116e3882e761b788199f437edbb2ab79921fee51bbffd7b2",
+    "transform": "Path fields redacted; numeric fields preserved exactly; canonical LF line endings for Git clone integrity",
+    "rows": 240
+  },
+  {
+    "path": "artifacts/checkpoints/d8_w64/online_initial.data-00000-of-00001",
+    "sha256": "d315ff8e33dcadb45711b26308db900e205ba20fdb393830d5300e2c7930ff58",
+    "source_archive": "results/selection/local_timing_dem5_dem10_20261015/dem10/d8_w64/online_initial.data-00000-of-00001",
+    "source_sha256": "d315ff8e33dcadb45711b26308db900e205ba20fdb393830d5300e2c7930ff58",
+    "bytes": 7666172,
+    "transform": "byte-for-byte"
+  },
+  {
+    "path": "artifacts/checkpoints/d8_w64/online_initial.index",
+    "sha256": "22e001ac9873556c482acc057dfcad1b477b88f7c8138ff208a0360774cc0662",
+    "source_archive": "results/selection/local_timing_dem5_dem10_20261015/dem10/d8_w64/online_initial.index",
+    "source_sha256": "22e001ac9873556c482acc057dfcad1b477b88f7c8138ff208a0360774cc0662",
+    "bytes": 33798,
+    "transform": "byte-for-byte"
+  },
+  {
+    "path": "artifacts/checkpoints/CNN/online_initial.data-00000-of-00001",
+    "sha256": "6a2d4cb633e4b6f840ea026209c587a7a8084f411a3da3721b7eeabc97ab5ba1",
+    "source_archive": "results/selection/local_timing_dem5_dem10_20261015/dem10/CNN/online_initial.data-00000-of-00001",
+    "source_sha256": "6a2d4cb633e4b6f840ea026209c587a7a8084f411a3da3721b7eeabc97ab5ba1",
+    "bytes": 7994598,
+    "transform": "byte-for-byte"
+  },
+  {
+    "path": "artifacts/checkpoints/CNN/online_initial.index",
+    "sha256": "9a21c09af325672d740273a2c0267e9bf138b60af039d97933855906d825dfe1",
+    "source_archive": "results/selection/local_timing_dem5_dem10_20261015/dem10/CNN/online_initial.index",
+    "source_sha256": "9a21c09af325672d740273a2c0267e9bf138b60af039d97933855906d825dfe1",
+    "bytes": 23393,
+    "transform": "byte-for-byte"
+  },
+  {
+    "path": "artifacts/manifests/A2B.json",
+    "sha256": "79989e42ec1e2625d020a03153f2b9e608c439e359a9c39f5a6857d70bbc231e",
+    "source_archive": "results/selection/local_timing_dem5_dem10_20261015/dem10/d8_w64/data/manifest.json",
+    "source_sha256": "7b38e49d3e56bc637916a05a53b7c1f717de395963b4aa7fd2b84b0cf8b2cf16",
+    "transform": "role names and relative paths only; source_train A reused for A2C",
+    "data_payload_included": false
+  },
+  {
+    "path": "artifacts/manifests/A2C.json",
+    "sha256": "3d011a16171c45340cad7ec12579cfe3a34529377863e4e1de6c896649087901",
+    "source_archive": "results/replacement864_20261016/a2c_local_timing/FastSET/data/manifest.json",
+    "source_sha256": "5c67db734a9f16affb64b998f0e870506d179b93008d9e0754afcd11ed78face",
+    "transform": "role names and relative paths only; source_train A reused for A2C",
+    "data_payload_included": false
+  }
+]

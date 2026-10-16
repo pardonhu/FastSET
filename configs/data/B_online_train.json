@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "role": "online_train",
+  "tdl_model": "B",
+  "delay_spread_ns": 500,
+  "min_speed_m_s": 0,
+  "max_speed_m_s": 5,
+  "snrs_db": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "batches_per_snr": 10,
+  "batch_size": 32
+}
