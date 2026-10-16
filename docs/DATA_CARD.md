@@ -45,8 +45,9 @@ Absolute paths and paths escaping the data root are rejected.
 `artifacts/manifests/A2B.json` and `A2C.json` preserve existing batch order and
 online/validation file hashes. The historical source-training inventory did
 not hash every source file; these hashes are **missing, not fabricated**.
-`--verify-hashes` rejects such an incomplete inventory. Hash the final exported
-data payload once and complete the manifests before public release.
+`--verify-hashes` rejects such an incomplete archival inventory. The unified
+generation suite hashes every newly written file and creates complete manifests;
+use those manifests when rerunning with generated data.
 
 No dataset payload is included in this code directory. Source training alone
 is approximately 22.2 GB in the current uncompressed pickle format. The distribution uses generation scripts instead of hosted raw datasets;

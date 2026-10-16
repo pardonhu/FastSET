@@ -4,9 +4,10 @@
 
 1. **Replot measured results:** install CPU dependencies and run `fastset
    paper-figures`. The bundled numbers are real measured data; no model is run.
-2. **Re-evaluate or adapt released checkpoints:** obtain the archived dataset
-   payload matching the manifests, then run the CLI. This requires a GPU and
-   the pinned environment. New portable runner acceptance is still pending.
+2. **Re-evaluate or adapt released checkpoints:** generate the TDL dataset using
+   `DATA_GENERATION.md`, then run the CLI with its assembled manifest. This
+   requires a GPU and the pinned environment. New portable runner acceptance
+   is still pending; fresh inputs need not reproduce archived BER exactly.
 3. **Retrain source models and rebuild datasets:** source pretraining is exposed
    by the CLI; TDL generation creates a new dataset version. Exact paper input
    reproduction requires the archived dataset, not merely the same seed.
@@ -15,15 +16,15 @@ The release is not yet a complete level-2/3 artifact. A unified TDL suite now
 generates the inputs and assembled manifests locally; see `DATA_GENERATION.md`.
 The generation-to-results GPU validation, RT scene preparation and specialized
 experiment adapters remain listed in `RELEASE_STATUS.md` and `COVERAGE.md`.
-The archive-based examples below apply only if the original data is already
-available. With newly generated data, substitute `data/tdl_v1/A2B.json` and
-`data/tdl_v1` for the manifest and data-root arguments.
+Examples below assume `fastset generate-suite` has produced `data/tdl_v1`.
+The archived manifests in `artifacts/manifests` are retained for provenance and
+can only be used if their original data payloads are already available.
 
 ## Source pretraining
 
 ```bash
 fastset pretrain --config configs/a2b_fastset.json \
-  --manifest artifacts/manifests/A2B.json --data-root "$FASTSET_DATA_ROOT" \
+  --manifest data/tdl_v1/A2B.json --data-root data/tdl_v1 \
   --gpu 0 --output results/source_A/run_001
 ```
 
@@ -78,7 +79,7 @@ After online adaptation, replay its saved trajectory in a new run directory:
 
 ```bash
 fastset timing --config configs/a2b_fastset.json \
-  --manifest artifacts/manifests/A2B.json --data-root "$FASTSET_DATA_ROOT" \
+  --manifest data/tdl_v1/A2B.json --data-root data/tdl_v1 \
   --source artifacts/checkpoints/d8_w64/online_initial \
   --trajectory results/a2b/run_001/iterations.csv \
   --gpu 0 --output results/a2b_timing/run_001
@@ -93,9 +94,10 @@ online trajectory. The timer performs no per-iteration BER evaluation. See
 Use `evaluate` with the **selected online checkpoint**, a manifest containing an
 `evaluation` split, and the same receiver config. It computes BER separately for
 each declared SNR and preserves integer error/bit counts. It does not update the
-model or choose a new checkpoint on the evaluation set. The bundled A2B/A2C
-manifests currently describe source/online/validation inputs, not the full
-independent evaluation data; the latter must be exported before full release.
+model or choose a new checkpoint on the evaluation set. Generated A2B/A2C manifests include an `evaluation` split with seed57 and the
+configured full SNR range. Archived manifests include only their original
+source/online/validation inventories; they are not replacements for generated
+evaluation manifests.
 
 ## GPU numerical acceptance before publication
 
@@ -103,9 +105,9 @@ A small runnable software smoke can be prepared without loading the full data:
 
 ```bash
 python scripts/prepare_smoke.py --config configs/a2b_fastset.json \
-  --manifest artifacts/manifests/A2B.json --output results/smoke_inputs
+  --manifest data/tdl_v1/A2B.json --output results/smoke_inputs
 fastset online --config results/smoke_inputs/config.json \
-  --manifest results/smoke_inputs/manifest.json --data-root "$FASTSET_DATA_ROOT" \
+  --manifest results/smoke_inputs/manifest.json --data-root data/tdl_v1 \
   --source artifacts/checkpoints/d8_w64/online_initial \
   --gpu 0 --output results/smoke_run
 ```
