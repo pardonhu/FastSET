@@ -178,13 +178,13 @@
     {
       "path": "paper/tables/plot_ablation_a2b_log10_DATA_CSV.csv",
       "source": "plot_ablation_a2b_log10.py",
-      "sha256": "ec899e799fbcdd624f8abd0da1bc6037fb2fa240077d4d15cf1ab5bd82aef9ec",
+      "sha256": "6157d392bc85a55ca5b4dae8b623f99ea4d9968cacf50682627910c735664e9f",
       "rows": 1071
     },
     {
       "path": "paper/tables/plot_ablation_a2c_log10_DATA_CSV.csv",
       "source": "plot_ablation_a2c_log10.py",
-      "sha256": "6ee728735af8ce80b18671ad86b2fe113991605f0e6e217e5708d94547264b37",
+      "sha256": "968bdf1a372c0dc532af4eaa6dd8802552eb339c0e1c3234ffd2d152f9d44595",
       "rows": 1785
     },
     {
@@ -262,7 +262,7 @@
     {
       "path": "paper/tables/plot_supplement_DATA_fd552cc2.csv",
       "source": "plot_supplement.py",
-      "sha256": "a03f0e6eb1466322400ad0ec8986f58da449cfdb89b56eb7096b44e81e7eae28",
+      "sha256": "7120cae6df1d9cac664f80e8616e251ba51ea33c982896332bd499b0eeb499f4",
       "rows": 21
     },
     {
@@ -286,7 +286,7 @@
     {
       "path": "paper/tables/plot_fixed_time_DATA_CSV.csv",
       "source": "plot_fixed_time.py",
-      "sha256": "325a64d2c756133793976a0e9257dce686f8f81ec93d08428a3cce1c4b039085",
+      "sha256": "7a453c9f96d9858c52925c882df47897c1a89cbf346500604572d1f9e2c13d56",
       "rows": 816
     }
   ],
