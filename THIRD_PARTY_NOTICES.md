@@ -1,20 +1,17 @@
-# Attribution and licensing inventory
+# Attribution and licenses
 
-This file is an inventory, not a substitute for a license grant.
+FastSET code, author-generated numerical measurements, propagation coefficient
+arrays, and model weights in this release are distributed under the repository's
+MIT license. The original FastSET/SwiftSET implementation files are identified by
+hash in `artifacts/source_provenance.json`.
 
-- Receiver/link definitions derive from the authors' existing FastSET/SwiftSET
-  experiment code. Source filenames and hashes are recorded in
-  `artifacts/source_provenance.json`. Author ownership and any upstream copied
-  snippets must be reviewed before assigning a repository license.
-- TensorFlow, Sionna, NumPy, Matplotlib and their dependencies are installed as
-  dependencies, not vendored into this repository. Their licenses continue to
-  govern those packages. See their official distributions for notices.
-- Existing RT scenes/meshes are **not** bundled. Their source-specific license,
-  redistribution permission, transformations and asset hashes must accompany a
-  future scene release. Do not infer a scene license from the Python code license.
-- Paper CSVs and checkpoints were exported from existing author experiments.
-  Their distribution terms must be stated with the final release.
+TensorFlow, NVIDIA Sionna, NumPy, Matplotlib, and their dependencies are installed
+from their distributions and retain their own licenses and notices. The receiver
+uses Sionna's OFDM, channel, mapping, and 5G LDPC components. RT propagation was
+generated using NVIDIA Sionna's ray tracer. Scene meshes and third-party scene
+textures are not redistributed. The included RT arrays are the authors' simulated
+channel responses used by the experiments; geometry files and images from other
+projects are not required to run the released frozen-channel experiments.
 
-No external GitHub repository, server home directory, SSH key, or remote
-orchestration credential is redistributed.
-
+The paper's city illustrations are regenerated from the authors' schematic
+plotting coordinates. They are not a redistribution of city scene meshes.

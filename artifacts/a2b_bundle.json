@@ -1,0 +1,13 @@
+{
+  "tag": "v1.0.0",
+  "asset": "fastset-a2b-inputs-v1.0.0.tar.gz",
+  "bytes": 1181356678,
+  "sha256": "4a7814791f2a7e806e7df3a4c0a402190010af9b6043e68a2405cb99ab2090e4",
+  "roles": {
+    "online_train": 170,
+    "validation": 100,
+    "evaluation": 100
+  },
+  "description": "Original A2B adaptation/validation/PEBS evaluation files; every SHA256 matches the author manifest",
+  "files_bit_identical": true
+}

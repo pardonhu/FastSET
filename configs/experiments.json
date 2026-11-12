@@ -1,0 +1,1081 @@
+{
+  "A2B_d8_w64": {
+    "config": "configs/experiments/A2B_d8_w64.json",
+    "case": "A2B",
+    "group": "main",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "A2B_CNN": {
+    "config": "configs/experiments/A2B_CNN.json",
+    "case": "A2B",
+    "group": "main",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "A2C_d8_w64": {
+    "config": "configs/experiments/A2C_d8_w64.json",
+    "case": "A2C",
+    "group": "main",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "A2C_CNN": {
+    "config": "configs/experiments/A2C_CNN.json",
+    "case": "A2C",
+    "group": "main",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "B2C_d8_w64": {
+    "config": "configs/experiments/B2C_d8_w64.json",
+    "case": "B2C",
+    "group": "main",
+    "initial": "B/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "B2C_CNN": {
+    "config": "configs/experiments/B2C_CNN.json",
+    "case": "B2C",
+    "group": "main",
+    "initial": "B/CNN",
+    "evaluation_role": "validation"
+  },
+  "pebs_d1_w8": {
+    "config": "configs/experiments/pebs_d1_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d1_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d1_w16": {
+    "config": "configs/experiments/pebs_d1_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d1_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d1_w32": {
+    "config": "configs/experiments/pebs_d1_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d1_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d1_w64": {
+    "config": "configs/experiments/pebs_d1_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d1_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d2_w8": {
+    "config": "configs/experiments/pebs_d2_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d2_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d2_w16": {
+    "config": "configs/experiments/pebs_d2_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d2_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d2_w32": {
+    "config": "configs/experiments/pebs_d2_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d2_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d2_w64": {
+    "config": "configs/experiments/pebs_d2_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d2_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d3_w8": {
+    "config": "configs/experiments/pebs_d3_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d3_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d3_w16": {
+    "config": "configs/experiments/pebs_d3_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d3_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d3_w32": {
+    "config": "configs/experiments/pebs_d3_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d3_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d3_w64": {
+    "config": "configs/experiments/pebs_d3_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d3_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d4_w8": {
+    "config": "configs/experiments/pebs_d4_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d4_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d4_w16": {
+    "config": "configs/experiments/pebs_d4_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d4_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d4_w32": {
+    "config": "configs/experiments/pebs_d4_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d4_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d4_w64": {
+    "config": "configs/experiments/pebs_d4_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d4_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d5_w8": {
+    "config": "configs/experiments/pebs_d5_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d5_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d5_w16": {
+    "config": "configs/experiments/pebs_d5_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d5_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d5_w32": {
+    "config": "configs/experiments/pebs_d5_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d5_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d5_w64": {
+    "config": "configs/experiments/pebs_d5_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d5_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d6_w8": {
+    "config": "configs/experiments/pebs_d6_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d6_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d6_w16": {
+    "config": "configs/experiments/pebs_d6_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d6_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d6_w32": {
+    "config": "configs/experiments/pebs_d6_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d6_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d6_w64": {
+    "config": "configs/experiments/pebs_d6_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d6_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d7_w8": {
+    "config": "configs/experiments/pebs_d7_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d7_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d7_w16": {
+    "config": "configs/experiments/pebs_d7_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d7_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d7_w32": {
+    "config": "configs/experiments/pebs_d7_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d7_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d7_w64": {
+    "config": "configs/experiments/pebs_d7_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d7_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d8_w8": {
+    "config": "configs/experiments/pebs_d8_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d8_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d8_w16": {
+    "config": "configs/experiments/pebs_d8_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d8_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d8_w32": {
+    "config": "configs/experiments/pebs_d8_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d8_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d8_w64": {
+    "config": "configs/experiments/pebs_d8_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d9_w8": {
+    "config": "configs/experiments/pebs_d9_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d9_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d9_w16": {
+    "config": "configs/experiments/pebs_d9_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d9_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d9_w32": {
+    "config": "configs/experiments/pebs_d9_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d9_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d9_w64": {
+    "config": "configs/experiments/pebs_d9_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d9_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d10_w8": {
+    "config": "configs/experiments/pebs_d10_w8.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d10_w8",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d10_w16": {
+    "config": "configs/experiments/pebs_d10_w16.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d10_w16",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d10_w32": {
+    "config": "configs/experiments/pebs_d10_w32.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d10_w32",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_d10_w64": {
+    "config": "configs/experiments/pebs_d10_w64.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/d10_w64",
+    "evaluation_role": "evaluation"
+  },
+  "pebs_CNN": {
+    "config": "configs/experiments/pebs_CNN.json",
+    "case": "A2B",
+    "group": "pebs",
+    "initial": "A/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "ablation_A2B_est1_s42": {
+    "config": "configs/experiments/ablation_A2B_est1_s42.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_est5_s42": {
+    "config": "configs/experiments/ablation_A2B_est5_s42.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_est_only_s42": {
+    "config": "configs/experiments/ablation_A2B_est_only_s42.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_dem_only_s42": {
+    "config": "configs/experiments/ablation_A2B_dem_only_s42.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_joint_sp_s42": {
+    "config": "configs/experiments/ablation_A2B_joint_sp_s42.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_joint_jp_s42": {
+    "config": "configs/experiments/ablation_A2B_joint_jp_s42.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/joint_jp",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_E2E_s42": {
+    "config": "configs/experiments/ablation_A2B_E2E_s42.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_est1_s43": {
+    "config": "configs/experiments/ablation_A2B_est1_s43.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_est5_s43": {
+    "config": "configs/experiments/ablation_A2B_est5_s43.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_est_only_s43": {
+    "config": "configs/experiments/ablation_A2B_est_only_s43.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_dem_only_s43": {
+    "config": "configs/experiments/ablation_A2B_dem_only_s43.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_joint_sp_s43": {
+    "config": "configs/experiments/ablation_A2B_joint_sp_s43.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_joint_jp_s43": {
+    "config": "configs/experiments/ablation_A2B_joint_jp_s43.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/joint_jp",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_E2E_s43": {
+    "config": "configs/experiments/ablation_A2B_E2E_s43.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_est1_s44": {
+    "config": "configs/experiments/ablation_A2B_est1_s44.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_est5_s44": {
+    "config": "configs/experiments/ablation_A2B_est5_s44.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_est_only_s44": {
+    "config": "configs/experiments/ablation_A2B_est_only_s44.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_dem_only_s44": {
+    "config": "configs/experiments/ablation_A2B_dem_only_s44.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_joint_sp_s44": {
+    "config": "configs/experiments/ablation_A2B_joint_sp_s44.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_joint_jp_s44": {
+    "config": "configs/experiments/ablation_A2B_joint_jp_s44.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/joint_jp",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2B_E2E_s44": {
+    "config": "configs/experiments/ablation_A2B_E2E_s44.json",
+    "case": "A2B",
+    "group": "ablation",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est1_s42": {
+    "config": "configs/experiments/ablation_A2C_est1_s42.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est5_s42": {
+    "config": "configs/experiments/ablation_A2C_est5_s42.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est_only_s42": {
+    "config": "configs/experiments/ablation_A2C_est_only_s42.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_dem_only_s42": {
+    "config": "configs/experiments/ablation_A2C_dem_only_s42.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_joint_sp_s42": {
+    "config": "configs/experiments/ablation_A2C_joint_sp_s42.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_joint_jp_s42": {
+    "config": "configs/experiments/ablation_A2C_joint_jp_s42.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/joint_jp",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_E2E_s42": {
+    "config": "configs/experiments/ablation_A2C_E2E_s42.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est1_s43": {
+    "config": "configs/experiments/ablation_A2C_est1_s43.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est5_s43": {
+    "config": "configs/experiments/ablation_A2C_est5_s43.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est_only_s43": {
+    "config": "configs/experiments/ablation_A2C_est_only_s43.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_dem_only_s43": {
+    "config": "configs/experiments/ablation_A2C_dem_only_s43.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_joint_sp_s43": {
+    "config": "configs/experiments/ablation_A2C_joint_sp_s43.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_joint_jp_s43": {
+    "config": "configs/experiments/ablation_A2C_joint_jp_s43.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/joint_jp",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_E2E_s43": {
+    "config": "configs/experiments/ablation_A2C_E2E_s43.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est1_s44": {
+    "config": "configs/experiments/ablation_A2C_est1_s44.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est5_s44": {
+    "config": "configs/experiments/ablation_A2C_est5_s44.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_est_only_s44": {
+    "config": "configs/experiments/ablation_A2C_est_only_s44.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_dem_only_s44": {
+    "config": "configs/experiments/ablation_A2C_dem_only_s44.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_joint_sp_s44": {
+    "config": "configs/experiments/ablation_A2C_joint_sp_s44.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_joint_jp_s44": {
+    "config": "configs/experiments/ablation_A2C_joint_jp_s44.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/joint_jp",
+    "evaluation_role": "validation"
+  },
+  "ablation_A2C_E2E_s44": {
+    "config": "configs/experiments/ablation_A2C_E2E_s44.json",
+    "case": "A2C",
+    "group": "ablation",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "learning_rate_0.01": {
+    "config": "configs/experiments/learning_rate_0.01.json",
+    "case": "A2B",
+    "group": "learning_rate",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "learning_rate_0.003": {
+    "config": "configs/experiments/learning_rate_0.003.json",
+    "case": "A2B",
+    "group": "learning_rate",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "learning_rate_0.001": {
+    "config": "configs/experiments/learning_rate_0.001.json",
+    "case": "A2B",
+    "group": "learning_rate",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "learning_rate_0.0003": {
+    "config": "configs/experiments/learning_rate_0.0003.json",
+    "case": "A2B",
+    "group": "learning_rate",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "learning_rate_0.0001": {
+    "config": "configs/experiments/learning_rate_0.0001.json",
+    "case": "A2B",
+    "group": "learning_rate",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "batch_size_16": {
+    "config": "configs/experiments/batch_size_16.json",
+    "case": "A2B",
+    "group": "batch_size",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "batch_size_32": {
+    "config": "configs/experiments/batch_size_32.json",
+    "case": "A2B",
+    "group": "batch_size",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "batch_size_64": {
+    "config": "configs/experiments/batch_size_64.json",
+    "case": "A2B",
+    "group": "batch_size",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "volume_1_d8_w64": {
+    "config": "configs/experiments/volume_1_d8_w64.json",
+    "case": "A2B_volume_1",
+    "group": "data_volume",
+    "initial": "A/d8_w64",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_1_d9_w32": {
+    "config": "configs/experiments/volume_1_d9_w32.json",
+    "case": "A2B_volume_1",
+    "group": "data_volume",
+    "initial": "A/d9_w32",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_1_CNN": {
+    "config": "configs/experiments/volume_1_CNN.json",
+    "case": "A2B_volume_1",
+    "group": "data_volume",
+    "initial": "A/CNN",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_5_d8_w64": {
+    "config": "configs/experiments/volume_5_d8_w64.json",
+    "case": "A2B_volume_5",
+    "group": "data_volume",
+    "initial": "A/d8_w64",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_5_d9_w32": {
+    "config": "configs/experiments/volume_5_d9_w32.json",
+    "case": "A2B_volume_5",
+    "group": "data_volume",
+    "initial": "A/d9_w32",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_5_CNN": {
+    "config": "configs/experiments/volume_5_CNN.json",
+    "case": "A2B_volume_5",
+    "group": "data_volume",
+    "initial": "A/CNN",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_10_d8_w64": {
+    "config": "configs/experiments/volume_10_d8_w64.json",
+    "case": "A2B_volume_10",
+    "group": "data_volume",
+    "initial": "A/d8_w64",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_10_d9_w32": {
+    "config": "configs/experiments/volume_10_d9_w32.json",
+    "case": "A2B_volume_10",
+    "group": "data_volume",
+    "initial": "A/d9_w32",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_10_CNN": {
+    "config": "configs/experiments/volume_10_CNN.json",
+    "case": "A2B_volume_10",
+    "group": "data_volume",
+    "initial": "A/CNN",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_20_d8_w64": {
+    "config": "configs/experiments/volume_20_d8_w64.json",
+    "case": "A2B_volume_20",
+    "group": "data_volume",
+    "initial": "A/d8_w64",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_20_d9_w32": {
+    "config": "configs/experiments/volume_20_d9_w32.json",
+    "case": "A2B_volume_20",
+    "group": "data_volume",
+    "initial": "A/d9_w32",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_20_CNN": {
+    "config": "configs/experiments/volume_20_CNN.json",
+    "case": "A2B_volume_20",
+    "group": "data_volume",
+    "initial": "A/CNN",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_100_d8_w64": {
+    "config": "configs/experiments/volume_100_d8_w64.json",
+    "case": "A2B_volume_100",
+    "group": "data_volume",
+    "initial": "A/d8_w64",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_100_d9_w32": {
+    "config": "configs/experiments/volume_100_d9_w32.json",
+    "case": "A2B_volume_100",
+    "group": "data_volume",
+    "initial": "A/d9_w32",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "volume_100_CNN": {
+    "config": "configs/experiments/volume_100_CNN.json",
+    "case": "A2B_volume_100",
+    "group": "data_volume",
+    "initial": "A/CNN",
+    "evaluation_role": "evaluation",
+    "evaluation_model": "first_hit"
+  },
+  "TDL_delay_600_d8_w64": {
+    "config": "configs/experiments/TDL_delay_600_d8_w64.json",
+    "case": "TDL_delay_600",
+    "group": "tdl_delay",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "TDL_delay_600_CNN": {
+    "config": "configs/experiments/TDL_delay_600_CNN.json",
+    "case": "TDL_delay_600",
+    "group": "tdl_delay",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "TDL_delay_900_d8_w64": {
+    "config": "configs/experiments/TDL_delay_900_d8_w64.json",
+    "case": "TDL_delay_900",
+    "group": "tdl_delay",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "TDL_delay_900_CNN": {
+    "config": "configs/experiments/TDL_delay_900_CNN.json",
+    "case": "TDL_delay_900",
+    "group": "tdl_delay",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "TDL_delay_1200_d8_w64": {
+    "config": "configs/experiments/TDL_delay_1200_d8_w64.json",
+    "case": "TDL_delay_1200",
+    "group": "tdl_delay",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "TDL_delay_1200_CNN": {
+    "config": "configs/experiments/TDL_delay_1200_CNN.json",
+    "case": "TDL_delay_1200",
+    "group": "tdl_delay",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "TDL_speed_5_d8_w64": {
+    "config": "configs/experiments/TDL_speed_5_d8_w64.json",
+    "case": "TDL_speed_5",
+    "group": "tdl_speed",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "TDL_speed_5_CNN": {
+    "config": "configs/experiments/TDL_speed_5_CNN.json",
+    "case": "TDL_speed_5",
+    "group": "tdl_speed",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "TDL_speed_10_d8_w64": {
+    "config": "configs/experiments/TDL_speed_10_d8_w64.json",
+    "case": "TDL_speed_10",
+    "group": "tdl_speed",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "TDL_speed_10_CNN": {
+    "config": "configs/experiments/TDL_speed_10_CNN.json",
+    "case": "TDL_speed_10",
+    "group": "tdl_speed",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "TDL_speed_20_d8_w64": {
+    "config": "configs/experiments/TDL_speed_20_d8_w64.json",
+    "case": "TDL_speed_20",
+    "group": "tdl_speed",
+    "initial": "A/d8_w64",
+    "evaluation_role": "validation"
+  },
+  "TDL_speed_20_CNN": {
+    "config": "configs/experiments/TDL_speed_20_CNN.json",
+    "case": "TDL_speed_20",
+    "group": "tdl_speed",
+    "initial": "A/CNN",
+    "evaluation_role": "validation"
+  },
+  "backbone_transformer_e2e": {
+    "config": "configs/experiments/backbone_transformer_e2e.json",
+    "case": "A2B",
+    "group": "backbone",
+    "initial": "A/transformer_e2e",
+    "evaluation_role": "validation"
+  },
+  "backbone_transformer_split": {
+    "config": "configs/experiments/backbone_transformer_split.json",
+    "case": "A2B",
+    "group": "backbone",
+    "initial": "A/transformer_split",
+    "evaluation_role": "validation"
+  },
+  "backbone_mixer_e2e": {
+    "config": "configs/experiments/backbone_mixer_e2e.json",
+    "case": "A2B",
+    "group": "backbone",
+    "initial": "A/mixer_e2e",
+    "evaluation_role": "validation"
+  },
+  "backbone_mixer_split": {
+    "config": "configs/experiments/backbone_mixer_split.json",
+    "case": "A2B",
+    "group": "backbone",
+    "initial": "A/mixer_split",
+    "evaluation_role": "validation"
+  },
+  "pretraining30_A2B_CNN": {
+    "config": "configs/experiments/pretraining30_A2B_CNN.json",
+    "case": "A2B",
+    "group": "pretraining",
+    "initial": "A/CNN_epoch30",
+    "evaluation_role": "validation"
+  },
+  "pretraining30_A2C_CNN": {
+    "config": "configs/experiments/pretraining30_A2C_CNN.json",
+    "case": "A2C",
+    "group": "pretraining",
+    "initial": "A/CNN_epoch30",
+    "evaluation_role": "validation"
+  },
+  "Paris_P1_d8_w64": {
+    "config": "configs/experiments/Paris_P1_d8_w64.json",
+    "case": "Paris_P1",
+    "group": "rt",
+    "initial": "rt/paris/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "Paris_P1_CNN": {
+    "config": "configs/experiments/Paris_P1_CNN.json",
+    "case": "Paris_P1",
+    "group": "rt",
+    "initial": "rt/paris/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "Paris_P2_d8_w64": {
+    "config": "configs/experiments/Paris_P2_d8_w64.json",
+    "case": "Paris_P2",
+    "group": "rt",
+    "initial": "rt/paris/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "Paris_P2_CNN": {
+    "config": "configs/experiments/Paris_P2_CNN.json",
+    "case": "Paris_P2",
+    "group": "rt",
+    "initial": "rt/paris/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "Munich_P1_d8_w64": {
+    "config": "configs/experiments/Munich_P1_d8_w64.json",
+    "case": "Munich_P1",
+    "group": "rt",
+    "initial": "rt/munich/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "Munich_P1_CNN": {
+    "config": "configs/experiments/Munich_P1_CNN.json",
+    "case": "Munich_P1",
+    "group": "rt",
+    "initial": "rt/munich/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "Florence_P1_d8_w64": {
+    "config": "configs/experiments/Florence_P1_d8_w64.json",
+    "case": "Florence_P1",
+    "group": "rt",
+    "initial": "rt/florence/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "Florence_P1_CNN": {
+    "config": "configs/experiments/Florence_P1_CNN.json",
+    "case": "Florence_P1",
+    "group": "rt",
+    "initial": "rt/florence/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "SF_P1_d8_w64": {
+    "config": "configs/experiments/SF_P1_d8_w64.json",
+    "case": "SF_P1",
+    "group": "rt",
+    "initial": "rt/san_francisco/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "SF_P1_CNN": {
+    "config": "configs/experiments/SF_P1_CNN.json",
+    "case": "SF_P1",
+    "group": "rt",
+    "initial": "rt/san_francisco/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "Paris_to_SF_d8_w64": {
+    "config": "configs/experiments/Paris_to_SF_d8_w64.json",
+    "case": "Paris_to_SF",
+    "group": "rt",
+    "initial": "rt/paris/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "Paris_to_SF_CNN": {
+    "config": "configs/experiments/Paris_to_SF_CNN.json",
+    "case": "Paris_to_SF",
+    "group": "rt",
+    "initial": "rt/paris/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "SF_to_Paris_d8_w64": {
+    "config": "configs/experiments/SF_to_Paris_d8_w64.json",
+    "case": "SF_to_Paris",
+    "group": "rt",
+    "initial": "rt/san_francisco/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "SF_to_Paris_CNN": {
+    "config": "configs/experiments/SF_to_Paris_CNN.json",
+    "case": "SF_to_Paris",
+    "group": "rt",
+    "initial": "rt/san_francisco/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "RT_delay_600_d8_w64": {
+    "config": "configs/experiments/RT_delay_600_d8_w64.json",
+    "case": "RT_delay_600",
+    "group": "rt",
+    "initial": "rt/paris/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "RT_delay_600_CNN": {
+    "config": "configs/experiments/RT_delay_600_CNN.json",
+    "case": "RT_delay_600",
+    "group": "rt",
+    "initial": "rt/paris/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "RT_delay_900_d8_w64": {
+    "config": "configs/experiments/RT_delay_900_d8_w64.json",
+    "case": "RT_delay_900",
+    "group": "rt",
+    "initial": "rt/paris/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "RT_delay_900_CNN": {
+    "config": "configs/experiments/RT_delay_900_CNN.json",
+    "case": "RT_delay_900",
+    "group": "rt",
+    "initial": "rt/paris/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "RT_delay_1200_d8_w64": {
+    "config": "configs/experiments/RT_delay_1200_d8_w64.json",
+    "case": "RT_delay_1200",
+    "group": "rt",
+    "initial": "rt/paris/d8_w64",
+    "evaluation_role": "evaluation"
+  },
+  "RT_delay_1200_CNN": {
+    "config": "configs/experiments/RT_delay_1200_CNN.json",
+    "case": "RT_delay_1200",
+    "group": "rt",
+    "initial": "rt/paris/CNN",
+    "evaluation_role": "evaluation"
+  },
+  "A2B_d5_w16": {
+    "config": "configs/experiments/A2B_d5_w16.json",
+    "case": "A2B",
+    "group": "differences",
+    "initial": "A/d5_w16",
+    "evaluation_role": "validation"
+  },
+  "A2C_d5_w16": {
+    "config": "configs/experiments/A2C_d5_w16.json",
+    "case": "A2C",
+    "group": "differences",
+    "initial": "A/d5_w16",
+    "evaluation_role": "validation"
+  }
+}

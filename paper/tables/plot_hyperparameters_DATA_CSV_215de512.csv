@@ -1,0 +1,9 @@
+delay_ns,method,target_reached,est,dem,cnn,bit_errors,bits,ber,training_seconds,input_seconds,total_seconds,aggregation
+300,FastSET,False,5,50,0,5881,26054400,0.00022572003193318594,9.007048047998978,0.05789869600084785,9.064946743999826,sum of separately measured medians; normal file cache; excludes BER evaluation
+300,CNN,True,0,0,163,5151,26054400,0.00019770173176123803,33.862989248000304,0.17948866900405847,34.04247791700436,sum of separately measured medians; normal file cache; excludes BER evaluation
+600,FastSET,True,4,0,0,3960,26054400,0.00015198968312453944,0.4885894819999521,0.004671036998843192,0.4932605189987953,sum of separately measured medians; normal file cache; excludes BER evaluation
+600,CNN,True,0,0,54,5134,26054400,0.00019704925079832964,11.163152316990818,0.06032863199470739,11.223480948985525,sum of separately measured medians; normal file cache; excludes BER evaluation
+900,FastSET,True,4,0,0,5000,26054400,0.00019190616556128716,0.485531747002824,0.004063193002366461,0.48959494000519044,sum of separately measured medians; normal file cache; excludes BER evaluation
+900,CNN,True,0,0,68,4862,26054400,0.00018660955539179564,14.403431014994567,0.07387696099431196,14.477307975988879,sum of separately measured medians; normal file cache; excludes BER evaluation
+1200,FastSET,True,5,1,0,914,26054400,3.508044706460329e-05,0.7937506450016372,0.007038435000140453,0.8007890800017776,sum of separately measured medians; normal file cache; excludes BER evaluation
+1200,CNN,True,0,0,84,4957,26054400,0.0001902557725374601,17.708049103985104,0.09243806100130314,17.800487164986407,sum of separately measured medians; normal file cache; excludes BER evaluation

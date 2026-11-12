@@ -46,7 +46,7 @@ def test_actual_online_loop_checks_initial_and_estimator(
         errors = 1 if calls else initial_errors
         return dict(bit_errors=errors, bits=100000, ber=errors / 100000)
 
-    manifest = {"online_train": [{"path": f"batch{i}"} for i in range(10)], "test56": [{}]}
+    manifest = {"online_train": [{"path": f"batch{i}"} for i in range(10)], "test56": [{"snr": 12}]}
     monkeypatch.setattr(
         experiment,
         "setup",

@@ -9,14 +9,25 @@ from .common import read, sha
 from fastset.data import read_arrays, counts
 
 
-def checked(e):
-    d = read_arrays(e["path"])
+def checked(e, timings=None):
+    if e.get("kind") == "rt":
+        from .rt.stream import checked as synthesize
+
+        d = synthesize(e)
+    else:
+        d = read_arrays(e["path"], timings=timings)
     assert d["batch_b"].shape == (32, 1, 1, 8142)
     assert d["batch_tx_codeword_bits"].shape == (32, 1, 1, 12672)
     assert d["batch_y"].shape == (32, 14, 264)
     assert np.all(d["ebno_db"] == e["snr"]), e["path"]
     d["batch_N0"] = d["batch_N0"].reshape(-1).astype("float32")
     assert all(np.isfinite(a).all() for a in d.values())
+    if "evaluation_snr" in e:
+        ratio = np.float32(10 ** ((e["snr"] - e["evaluation_snr"]) / 10))
+        signal = d["batch_h_freq"] * d["batch_x_rg"]
+        d["batch_y"] = (signal + (d["batch_y"] - signal) * np.sqrt(ratio)).astype("complex64")
+        d["batch_N0"] = (d["batch_N0"] * ratio).astype("float32")
+        d["ebno_db"] = np.full_like(d["ebno_db"], e["evaluation_snr"])
     return d
 
 
@@ -137,7 +148,7 @@ def runtime(root, cfg, item, out):
             )
 
     def evaluate(entries, est_only=False):
-        errors = bits = 0
+        errors = bits = block_errors = blocks = 0
         losses = []
         for e in entries:
             dd = checked(e)
@@ -149,10 +160,19 @@ def runtime(root, cfg, item, out):
                 m = counts(dd["batch_b"], pred.numpy())
                 errors += m["bit_errors"]
                 bits += m["bits"]
+                block_errors += m["block_errors"]
+                blocks += m["blocks"]
         return (
             dict(mse=float(np.mean(losses)))
             if est_only
-            else dict(bit_errors=errors, bits=bits, ber=errors / bits)
+            else dict(
+                bit_errors=errors,
+                bits=bits,
+                ber=errors / bits,
+                block_errors=block_errors,
+                blocks=blocks,
+                bler=block_errors / blocks,
+            )
         )
 
     def update(stage, dd):
@@ -162,5 +182,22 @@ def runtime(root, cfg, item, out):
         tf.test.experimental.sync_devices()
         assert np.isfinite(v)
         return v
+
+    def prepare_update(dd):
+        with tf.device("/GPU:0"):
+            return (*inp(dd), tf.convert_to_tensor(dd["batch_tx_codeword_bits"]))
+
+    def prepared_update(stage, values):
+        value = steps[stage](*values)
+        if "GPU" not in value.device:
+            raise RuntimeError("Update ran outside GPU")
+        result = float(value.numpy())
+        tf.test.experimental.sync_devices()
+        if not np.isfinite(result):
+            raise ValueError("Nonfinite update loss")
+        return result
+
+    update.prepare = prepare_update
+    update.prepared = prepared_update
 
     return tf, model, parts, opts, ck, manifest, d, update, evaluate

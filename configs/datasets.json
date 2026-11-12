@@ -1,0 +1,286 @@
+{
+  "A2B": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 10
+  },
+  "A2C": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "C",
+      "delay_spread_ns": 1000,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 10
+    },
+    "online_batches_per_snr": 10
+  },
+  "B2C": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "B",
+      "delay_spread_ns": 150,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 3
+    },
+    "target": {
+      "tdl_model": "C",
+      "delay_spread_ns": 1000,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 10
+    },
+    "online_batches_per_snr": 10
+  },
+  "A2B_volume_1": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 1
+  },
+  "A2B_volume_5": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 5
+  },
+  "A2B_volume_10": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 10
+  },
+  "A2B_volume_20": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 20
+  },
+  "A2B_volume_100": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 100
+  },
+  "TDL_delay_600": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 600,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 10
+  },
+  "TDL_delay_900": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 900,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 10
+  },
+  "TDL_delay_1200": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 1200,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 10
+  },
+  "TDL_speed_5": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 5,
+      "max_speed_m_s": 5
+    },
+    "online_batches_per_snr": 10
+  },
+  "TDL_speed_10": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 10,
+      "max_speed_m_s": 10
+    },
+    "online_batches_per_snr": 10
+  },
+  "TDL_speed_20": {
+    "kind": "tdl",
+    "source": {
+      "tdl_model": "A",
+      "delay_spread_ns": 50,
+      "min_speed_m_s": 0,
+      "max_speed_m_s": 1.5
+    },
+    "target": {
+      "tdl_model": "B",
+      "delay_spread_ns": 500,
+      "min_speed_m_s": 20,
+      "max_speed_m_s": 20
+    },
+    "online_batches_per_snr": 10
+  },
+  "Paris_P1": {
+    "kind": "rt",
+    "source_city": "paris",
+    "target_case": "Paris_P2",
+    "sir_db": 15
+  },
+  "Paris_P2": {
+    "kind": "rt",
+    "source_city": "paris",
+    "target_case": "Paris_P3",
+    "sir_db": 15
+  },
+  "Munich_P1": {
+    "kind": "rt",
+    "source_city": "munich",
+    "target_case": "Munich_P2",
+    "sir_db": 15
+  },
+  "Florence_P1": {
+    "kind": "rt",
+    "source_city": "florence",
+    "target_case": "Florence_P2",
+    "sir_db": 15
+  },
+  "SF_P1": {
+    "kind": "rt",
+    "source_city": "san_francisco",
+    "target_case": "SF_P2",
+    "sir_db": 15
+  },
+  "Paris_to_SF": {
+    "kind": "rt",
+    "source_city": "paris",
+    "target_case": "Paris_to_SF",
+    "sir_db": 15
+  },
+  "SF_to_Paris": {
+    "kind": "rt",
+    "source_city": "san_francisco",
+    "target_case": "SF_to_Paris",
+    "sir_db": 15
+  },
+  "RT_delay_600": {
+    "kind": "rt",
+    "source_city": "paris",
+    "target_case": "delay600",
+    "sir_db": 15
+  },
+  "RT_delay_900": {
+    "kind": "rt",
+    "source_city": "paris",
+    "target_case": "delay900",
+    "sir_db": 15
+  },
+  "RT_delay_1200": {
+    "kind": "rt",
+    "source_city": "paris",
+    "target_case": "delay1200",
+    "sir_db": 15
+  }
+}

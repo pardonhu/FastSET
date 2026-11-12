@@ -14,5 +14,5 @@ jobs:
       - run: python -m black --check src tests scripts
       - run: python -m pytest
       - run: python scripts/audit_release.py
-      - run: fastset paper-figures --output results/ci_figures
+      - run: python scripts/reproduce_paper.py --output results/ci_figures
 

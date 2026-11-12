@@ -14,7 +14,11 @@ def config():
 
 
 def test_all_declared_configs_and_parameter_budget():
-    files = [p for p in (ROOT / "configs").rglob("*.json") if p.parent.name != "data"]
+    files = [
+        p
+        for p in (ROOT / "configs").rglob("*.json")
+        if p.parent.name != "data" and p.name not in {"datasets.json", "experiments.json"}
+    ]
     for p in files:
         c = validate(json.loads(p.read_text()))
         batch_indices(c, 170)

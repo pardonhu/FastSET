@@ -1,0 +1,53 @@
+{
+  "seed": 42,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "adam_epsilon": 1e-07,
+  "method": "cnn",
+  "architecture": {
+    "family": "transformer",
+    "mode": "e2e",
+    "specs": {
+      "e2e": {
+        "family": "transformer",
+        "role": "e2e",
+        "depth": 8,
+        "width": 100,
+        "heads": 4,
+        "token_hidden": 32
+      },
+      "est": {
+        "family": "transformer",
+        "role": "est",
+        "depth": 3,
+        "width": 28,
+        "heads": 4,
+        "token_hidden": 16
+      },
+      "dem": {
+        "family": "transformer",
+        "role": "dem",
+        "depth": 12,
+        "width": 80,
+        "heads": 4,
+        "token_hidden": 32
+      }
+    }
+  },
+  "pretrain": {
+    "mode": "cnn",
+    "est_epochs": 0,
+    "dem_epochs": 0,
+    "joint_epochs": 0,
+    "cnn_epochs": 10
+  },
+  "online": {
+    "est_iterations": 0,
+    "dem_iterations": 0,
+    "joint_iterations": 0,
+    "cnn_iterations": 200,
+    "early_stop": true
+  },
+  "batch_order": "cycle_global",
+  "target_ber": 0.0002
+}

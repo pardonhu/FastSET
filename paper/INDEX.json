@@ -1,0 +1,405 @@
+{
+  "snapshot": "2026-11-12",
+  "tables": [
+    {
+      "path": "paper/tables/data_volume_results_SUMMARY_CSV.csv",
+      "source": "data_volume_results.py",
+      "sha256": "d38b233cdbc8300e68141833179d7a156962c9c8eb22b49d54a3e0b3e837abb1",
+      "rows": 30
+    },
+    {
+      "path": "paper/tables/data_volume_results_PEBS_CSV.csv",
+      "source": "data_volume_results.py",
+      "sha256": "b19c11a24b6e177af9274c18f6bbcfc29f844d9fcb6ee2d6ee346e10839e839d",
+      "rows": 100
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_e5c3e6ad.csv",
+      "source": "plot_main.py",
+      "sha256": "947e577342f671a24862f25e474ae7b479e1b2e4f7bcc69623944ca972d6d7f4",
+      "rows": 150
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_2b687d5f.csv",
+      "source": "plot_main.py",
+      "sha256": "58f70390a4dbef10474275555c92aa0345a99ccefa4388a728f2b0c989fd5a0e",
+      "rows": 90
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_9d1b96de.csv",
+      "source": "plot_main.py",
+      "sha256": "511af76e525300caeca8bd6f5b34274ef941472fd2431fa0d7bd075048772bce",
+      "rows": 90
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_5e14a017.csv",
+      "source": "plot_main.py",
+      "sha256": "5c2438380367f723276d926db8eb39acf6b8a88b3da67719f789174306fd5d6e",
+      "rows": 53
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_82f8a5f8.csv",
+      "source": "plot_main.py",
+      "sha256": "c2526a227fd16196af401b9f4559b93371383ca204e09649233b1d8c83b7b525",
+      "rows": 9
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_6e0da594.csv",
+      "source": "plot_main.py",
+      "sha256": "fd7fc1aae9ed2392dae2e4e5b32ca12a78d7fb23557668fe138f59644b0db089",
+      "rows": 6
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_870c5bf3.csv",
+      "source": "plot_main.py",
+      "sha256": "7a18a0025b719ef88ac79b084be61a3f1361ce15becc732a2c21d3721af55b1d",
+      "rows": 87
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_6f54a358.csv",
+      "source": "plot_main.py",
+      "sha256": "c2681c1997a987917734de1bf06a56d09401049ab5d277cc16d891d6964381bd",
+      "rows": 84
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV_4a94e89d.csv",
+      "source": "plot_main.py",
+      "sha256": "4c62991ade80fc6655be8c862746009ec1a66cf1e3e4abbc953590d1da141560",
+      "rows": 6
+    },
+    {
+      "path": "paper/tables/plot_main_DATA_CSV__results_before_curves_side_20261016_before_curves_csv__.csv",
+      "source": "plot_main.py",
+      "sha256": "06dd966aea6b3b89340066daf333a6f1b9d8ae5d8b76bbcd12d1127a06d85d35",
+      "rows": 60
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_0715cf88.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "7469649b43d7ca6b08c282f354fb71713fea613ddab316b489fe0650b72d839b",
+      "rows": 195
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_673764be.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "11e6aeb028408d30045861480bde2e5914dafffccae4d384ebbdd36ffd3f753d",
+      "rows": 25
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_7bc711b8.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "2ca7e129c74ef2dc0a9d52fa132974f5b4fb01a37a2bd0c5f3c562a13c397ab8",
+      "rows": 25
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_6aa4e9c2.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "3bff69a1a5213119221aa0b3a3b2a407ed867c5576bd863c80f2c47c85764a55",
+      "rows": 25
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_3d10135b.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "12fcfbf4ea1e95fc3473f62c6c99bdb0cfbbaa1af0ea42e9901d05ced4ca3414",
+      "rows": 25
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_9b0b57c7.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "5a2492ef7670fc1f6eed2d6026ce06e651936d3657b19a43faa4ee7808ead4ae",
+      "rows": 25
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_f5fbc721.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "7a2fc48947ef8d596f6ca00bd4c641cc4f6e8442cf4487c935bcabd7458a8694",
+      "rows": 14
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_409feef9.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "45613115cf848c2681659d47e769b79a5626020be7f79330df4cd568a218fb77",
+      "rows": 734
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_5e14a017.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "5c2438380367f723276d926db8eb39acf6b8a88b3da67719f789174306fd5d6e",
+      "rows": 53
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_93f7be7f.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "6dfdbea9ad8eab35e922e9d82827e3c14924911a75ebe787dc0a6f212b23df14",
+      "rows": 120
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_b72078b8.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "b6bffc59bc2bd47b9c2452d477b36d0afc49bc54b7296b81dae26a1e0c0a2c43",
+      "rows": 120
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV_215de512.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "f9f5348cf247d6cb3474d48e764293121d5e1ec928b7781d3a744b28c1a93588",
+      "rows": 8
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV__results_before_curves_side_20261016_before_curves_csv__.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "06dd966aea6b3b89340066daf333a6f1b9d8ae5d8b76bbcd12d1127a06d85d35",
+      "rows": 60
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV__results_paper_final_resident864_20261016_tables_pebs_first_hit_csv__.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "ea3cecae8aee188a2cbcfb8d60b41df1f60103246097ff6e3b92622f26c690a2",
+      "rows": 41
+    },
+    {
+      "path": "paper/tables/plot_hyperparameters_DATA_CSV__lr_initial_csv__.csv",
+      "source": "plot_hyperparameters.py",
+      "sha256": "f85906ce8b28998cbcae1020081427f300f41c2bb7a44b1a8a28e76037d75219",
+      "rows": 5
+    },
+    {
+      "path": "paper/tables/plot_width_depth_combined_DATA_CSV.csv",
+      "source": "plot_width_depth_combined.py",
+      "sha256": "ea3cecae8aee188a2cbcfb8d60b41df1f60103246097ff6e3b92622f26c690a2",
+      "rows": 41
+    },
+    {
+      "path": "paper/tables/plot_pebs_DATA_CSV.csv",
+      "source": "plot_pebs.py",
+      "sha256": "dca890cce5b970a3d0fd75437dfd7bfdefb9ea7e791da9959811cb46e78bce2e",
+      "rows": 691
+    },
+    {
+      "path": "paper/tables/plot_ablation_a2b_log10_DATA_CSV.csv",
+      "source": "plot_ablation_a2b_log10.py",
+      "sha256": "ec899e799fbcdd624f8abd0da1bc6037fb2fa240077d4d15cf1ab5bd82aef9ec",
+      "rows": 1071
+    },
+    {
+      "path": "paper/tables/plot_ablation_a2c_log10_DATA_CSV.csv",
+      "source": "plot_ablation_a2c_log10.py",
+      "sha256": "6ee728735af8ce80b18671ad86b2fe113991605f0e6e217e5708d94547264b37",
+      "rows": 1785
+    },
+    {
+      "path": "paper/tables/plot_rt_DATA_CSV_4ef63f77.csv",
+      "source": "plot_rt.py",
+      "sha256": "648282507a2af420351fbe57fb99a75dd09edf728931ddfa2f7257504312e29e",
+      "rows": 420
+    },
+    {
+      "path": "paper/tables/plot_rt_DATA_CSV_d2b187d2.csv",
+      "source": "plot_rt.py",
+      "sha256": "5a2a1e548a0a50623331119c563dcb1842294db2432e2403ec096e5a7a0c578a",
+      "rows": 14
+    },
+    {
+      "path": "paper/tables/plot_rt_DATA_CSV_b7913c7a.csv",
+      "source": "plot_rt.py",
+      "sha256": "945286eb6b50979aa1544b6b7f82d941ee0eef0774b2569ab49c4b9c1d9ead6b",
+      "rows": 8
+    },
+    {
+      "path": "paper/tables/plot_rt_DATA_CSV_cac4f413.csv",
+      "source": "plot_rt.py",
+      "sha256": "53ff60dcb971dc8a02275567c68b79d4d6595fe36e13d2f2647de0e13cbb40a0",
+      "rows": 240
+    },
+    {
+      "path": "paper/tables/plot_speed_BER_CSV.csv",
+      "source": "plot_speed.py",
+      "sha256": "6dfdbea9ad8eab35e922e9d82827e3c14924911a75ebe787dc0a6f212b23df14",
+      "rows": 120
+    },
+    {
+      "path": "paper/tables/plot_speed_TIMING_CSV.csv",
+      "source": "plot_speed.py",
+      "sha256": "3903e0ef12dbb49acf399aa5bd13b3be027d4865a724f64a08371c41fc977a1c",
+      "rows": 6
+    },
+    {
+      "path": "paper/tables/plot_supplement_DATA_2e2cb02b.csv",
+      "source": "plot_supplement.py",
+      "sha256": "947e577342f671a24862f25e474ae7b479e1b2e4f7bcc69623944ca972d6d7f4",
+      "rows": 150
+    },
+    {
+      "path": "paper/tables/plot_supplement_DATA_224bf484.csv",
+      "source": "plot_supplement.py",
+      "sha256": "511af76e525300caeca8bd6f5b34274ef941472fd2431fa0d7bd075048772bce",
+      "rows": 90
+    },
+    {
+      "path": "paper/tables/plot_supplement_DATA_7d9223d8.csv",
+      "source": "plot_supplement.py",
+      "sha256": "7a2fc48947ef8d596f6ca00bd4c641cc4f6e8442cf4487c935bcabd7458a8694",
+      "rows": 14
+    },
+    {
+      "path": "paper/tables/plot_supplement_DATA_958a8284.csv",
+      "source": "plot_supplement.py",
+      "sha256": "6dfdbea9ad8eab35e922e9d82827e3c14924911a75ebe787dc0a6f212b23df14",
+      "rows": 120
+    },
+    {
+      "path": "paper/tables/plot_supplement_DATA_46474d62.csv",
+      "source": "plot_supplement.py",
+      "sha256": "b6bffc59bc2bd47b9c2452d477b36d0afc49bc54b7296b81dae26a1e0c0a2c43",
+      "rows": 120
+    },
+    {
+      "path": "paper/tables/plot_supplement_DATA_4e8b9cb9.csv",
+      "source": "plot_supplement.py",
+      "sha256": "648282507a2af420351fbe57fb99a75dd09edf728931ddfa2f7257504312e29e",
+      "rows": 420
+    },
+    {
+      "path": "paper/tables/plot_supplement_DATA_fd552cc2.csv",
+      "source": "plot_supplement.py",
+      "sha256": "a03f0e6eb1466322400ad0ec8986f58da449cfdb89b56eb7096b44e81e7eae28",
+      "rows": 21
+    },
+    {
+      "path": "paper/tables/plot_supplement_DATA__rt_delay_curves__.csv",
+      "source": "plot_supplement.py",
+      "sha256": "53ff60dcb971dc8a02275567c68b79d4d6595fe36e13d2f2647de0e13cbb40a0",
+      "rows": 240
+    },
+    {
+      "path": "paper/tables/plot_joint_restored_DATA_CSV.csv",
+      "source": "plot_joint_restored.py",
+      "sha256": "d11d377db384936497dbc4bf9acc5f5bd29e97665c6f94f63ac3b5a634a60ac0",
+      "rows": 2703
+    },
+    {
+      "path": "paper/tables/plot_check_frequency_DATA_CSV.csv",
+      "source": "plot_check_frequency.py",
+      "sha256": "d11d377db384936497dbc4bf9acc5f5bd29e97665c6f94f63ac3b5a634a60ac0",
+      "rows": 2703
+    },
+    {
+      "path": "paper/tables/plot_fixed_time_DATA_CSV.csv",
+      "source": "plot_fixed_time.py",
+      "sha256": "325a64d2c756133793976a0e9257dce686f8f81ec93d08428a3cce1c4b039085",
+      "rows": 816
+    }
+  ],
+  "plot_sources": [
+    {
+      "path": "paper/plotting/ieee_style.py",
+      "source_sha256": "9ba0bb233ab6b41b9e27ae9740d727050a51cd0006bfb90b631337e1c282db88",
+      "export_sha256": "dc8e15d1c8832c88a879473af6a8f0e333f161eeb6005db28285569f0da4e87f"
+    },
+    {
+      "path": "paper/plotting/curve_markers.py",
+      "source_sha256": "5a332c7332f0fdf70e341d65a5359c33fa69e55c1364c24f398990d024beeef9",
+      "export_sha256": "5a332c7332f0fdf70e341d65a5359c33fa69e55c1364c24f398990d024beeef9"
+    },
+    {
+      "path": "paper/plotting/compact_layout.py",
+      "source_sha256": "9c778758a3134eb4d8ed499bc821dac83186477a407503fad8e0c0a694c99075",
+      "export_sha256": "9c778758a3134eb4d8ed499bc821dac83186477a407503fad8e0c0a694c99075"
+    },
+    {
+      "path": "paper/plotting/publication_geometry.py",
+      "source_sha256": "a81c78db8ce3764c5c33191eb437249202aef8eec1116e25b1d79eb04a0fbe1e",
+      "export_sha256": "a81c78db8ce3764c5c33191eb437249202aef8eec1116e25b1d79eb04a0fbe1e"
+    },
+    {
+      "path": "paper/plotting/data_volume_results.py",
+      "source_sha256": "3aa0c66c3d94ba9f0bea3826eaff05bf95f561e593a4ad62b755d8a2d729bc4f",
+      "export_sha256": "3aa0c66c3d94ba9f0bea3826eaff05bf95f561e593a4ad62b755d8a2d729bc4f"
+    },
+    {
+      "path": "paper/plotting/plot_main.py",
+      "source_sha256": "04423092541e6f4f168499c418b951822633e02550b0f80bf3267b19000e08de",
+      "export_sha256": "98e633659cf4183b6438e24d31c4c5e80aaf8002d9a5eb6fd45c4aa889a8c4f6"
+    },
+    {
+      "path": "paper/plotting/plot_hyperparameters.py",
+      "source_sha256": "d744a7733b9524c817ea19768d05d4c8cb64b717b15960b1a505c65c935ff3ba",
+      "export_sha256": "ec0d616e76a2908b91c6ddc4c7d719a858fe39e981c10a59dcf01c06a5e9152e"
+    },
+    {
+      "path": "paper/plotting/plot_width_depth_combined.py",
+      "source_sha256": "3a31505c948674546023470abaf6ad3f50941ce651cf3e2711f699297f69f4ae",
+      "export_sha256": "3a31505c948674546023470abaf6ad3f50941ce651cf3e2711f699297f69f4ae"
+    },
+    {
+      "path": "paper/plotting/plot_pebs.py",
+      "source_sha256": "89cda3f166393bf6a91deb78a630394c91dd25daa4fcb61bef30cdbdd85c3240",
+      "export_sha256": "89cda3f166393bf6a91deb78a630394c91dd25daa4fcb61bef30cdbdd85c3240"
+    },
+    {
+      "path": "paper/plotting/plot_ablation_a2b_log10.py",
+      "source_sha256": "af1bb1426ae80922d342d62640f1191e4f278c667298fd452e228da4241f714c",
+      "export_sha256": "af1bb1426ae80922d342d62640f1191e4f278c667298fd452e228da4241f714c"
+    },
+    {
+      "path": "paper/plotting/plot_ablation_a2c_log10.py",
+      "source_sha256": "d6407c8ff0ac97d3bbbb80725316e232e1c2ec6d64a6dd730d926fd0617009c1",
+      "export_sha256": "d6407c8ff0ac97d3bbbb80725316e232e1c2ec6d64a6dd730d926fd0617009c1"
+    },
+    {
+      "path": "paper/plotting/plot_rt.py",
+      "source_sha256": "975503a82104060f281bf86cdd4d42ec155b9b0aa675edfba828852f4934dd4f",
+      "export_sha256": "1a30386fa7a41009922bc3dbb57d94f460cdbbac3e1f280ea9c19b77b5805fda"
+    },
+    {
+      "path": "paper/plotting/plot_rt_city_geometry.py",
+      "source_sha256": "c43541a845a64873bc1a47bfc33bc1f6c191c9925541d4f37cbe20df282d37db",
+      "export_sha256": "c43541a845a64873bc1a47bfc33bc1f6c191c9925541d4f37cbe20df282d37db"
+    },
+    {
+      "path": "paper/plotting/plot_speed.py",
+      "source_sha256": "7855a3cf9ea50623e9db80e212f219effca0f1178d56901f705fcb59dde54ad8",
+      "export_sha256": "7855a3cf9ea50623e9db80e212f219effca0f1178d56901f705fcb59dde54ad8"
+    },
+    {
+      "path": "paper/plotting/plot_timing.py",
+      "source_sha256": "43f3afab636a326dc65637503b70c38a38c1b1574283bfdc8b5385d2259deddd",
+      "export_sha256": "76723d1bcfd79e82ec93e38990f2cb88510b24c99836395d8df513cd4808437d"
+    },
+    {
+      "path": "paper/plotting/plot_supplement.py",
+      "source_sha256": "47b3ada7889bf0171b53d8e294d9b49721c5665b67aaf3fe515c5463f641c9f5",
+      "export_sha256": "349387f359e120358925fe6e7136fc273e202cf7f6a4151c4db26fd62ed581ad"
+    },
+    {
+      "path": "paper/plotting/plot_joint_restored.py",
+      "source_sha256": "2e9446bf9a8e2108c3e9cffe38e986f9c263c310f91f27e2d3a2ac33d238b531",
+      "export_sha256": "2e9446bf9a8e2108c3e9cffe38e986f9c263c310f91f27e2d3a2ac33d238b531"
+    },
+    {
+      "path": "paper/plotting/plot_check_frequency.py",
+      "source_sha256": "3b8f39e8c52587a013e92d3e7f060423b1fae7fd03fd2d5e263ab3262b03136e",
+      "export_sha256": "3b8f39e8c52587a013e92d3e7f060423b1fae7fd03fd2d5e263ab3262b03136e"
+    },
+    {
+      "path": "paper/plotting/plot_fixed_time.py",
+      "source_sha256": "23daf4ae75aafbf9c87385ecfa5e91ea005414f38f6af0ea2c39ec64a188cac3",
+      "export_sha256": "23daf4ae75aafbf9c87385ecfa5e91ea005414f38f6af0ea2c39ec64a188cac3"
+    },
+    {
+      "path": "paper/plotting/plot_data_volume.py",
+      "source_sha256": "0da9308028649e6730800c15a5ae0bd393d22df9962a6228da5f987d866a3633",
+      "export_sha256": "0da9308028649e6730800c15a5ae0bd393d22df9962a6228da5f987d866a3633"
+    },
+    {
+      "path": "paper/plotting/plot_summary_differences.py",
+      "source_sha256": "fc8a77ebb9e2865213461431f59408087e5cdd993e44d409f5e23d42abcb7901",
+      "export_sha256": "b9c5749352fba72d04ecc05b58cbffdb34992b1c38cdb9f4676fc96d9edc6449"
+    }
+  ],
+  "transformations": [
+    "Private absolute provenance paths replaced by opaque source IDs; numerical columns unchanged.",
+    "Portable font: STIXGeneral, provided by Matplotlib.",
+    "Use bundled STIXGeneral fonts and retain label extents at export; measured curves unchanged."
+  ]
+}

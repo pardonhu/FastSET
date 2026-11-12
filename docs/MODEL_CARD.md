@@ -1,35 +1,39 @@
 # Model card
 
-## Released initial states
+FastSET uses a neural channel estimator and a neural bit demapper. The estimator
+adds a learned residual to a linearly interpolated pilot LS estimate. It is
+trained with true-channel MSE. The demapper predicts coded-bit logits and is
+trained with BCE. True channel labels supervise training and are not a receiver
+inference input. Both modules consume the same OFDM grid/noise conventions as the
+reference implementation.
 
-| Model | Estimator parameters | Demapper parameters | Total |
-|---|---:|---:|---:|
-| FastSET 8-64 | 260,866 | 370,004 | 630,870 |
-| CNN | — | — | 661,188 |
+`models/grid.py` contains the original CNN model definitions and spindle channel
+rule. A split ID records estimator residual-block depth and initial filter width.
+The demapper is allocated from the remaining 661,188-parameter E2E budget.
+`fastset check --config ...` reports the exact architecture and parameter count.
+All measured depths1–10 and widths8/16/32/64 have explicit configurations.
 
-The split identifier describes estimator depth and initial width. Demapper
-depth/width follow the original parameter-budget rule in `common.architecture`.
-The inherited channel-growth rule is preserved, including its depth-dependent
-behavior; it is not replaced by a new smoother architecture family.
+The Transformer and MLP definitions are in `backbones/`. Configurations include
+all depth, filter-width, attention-head and token-hidden dimensions, and the
+parameter budget is checked before execution. The internal name `mixer` identifies
+the released MLP implementation; paper legends call it MLP.
 
-The bundled checkpoints contain source-trained weights and zero online Adam
-iteration counters. Model identifiers, hashes and original archive identities
-are in `artifacts/INDEX.json`. These are the source states used by the existing
-8-64/CNN experiment family, not newly pretrained or target-selected replacements.
+Main models use source estimator5/demapper10 epochs or E2E10 epochs. The source
+checkpoint is selected by the fixed source budget. The Release bundle includes
+source-pretrained states with zero online Adam counters, plus separately labeled
+final target-adapted models for independent evaluation. Those final models must
+not initialize a new online comparison.
 
-Pretraining settings: estimator 5 epochs / demapper 10 epochs, CNN 10 epochs,
-batch32, seed42, Adam lr `1e-3`, epsilon `1e-7`. The new Joint-pretraining control
-is a separate run and is not silently merged into these checkpoint files.
+Sequential online training updates only the active module. Frozen model weights
+are hashed before and after each update. Joint SP reuses sequential source
+weights and updates both modules with MSE+BCE. Joint JP uses joint source
+pretraining and the same joint online objective. Each loss has coefficient one.
+The 30-epoch E2E control is provided as a from-scratch configuration; its source
+state is not included in the model archive.
 
-## Intended use and limits
+The source-model difference is explicit in experiment IDs and legends.
 
-Research reproduction under the documented simulated/constructed channel
-conditions. A validation threshold at 12 dB is not a guarantee at other SNRs,
-for unseen channel distributions, or on physical radio hardware. Timing excludes
-specific costs as documented in `TIMING.md`; it is not a deployment deadline.
-
-The 40-split configuration grid is included. Only 8-64 and CNN initial weights
-are bundled in this release candidate; the remaining pretrained candidates
-require an external checkpoint artifact release or retraining. Do not call a
-40-config directory a 40-checkpoint release.
-
+The package exposes both source pretraining and online adaptation. All cases
+reuse shared model, data, optimizer and LDPC functions. Neural execution requires
+a GPU; input construction and the Sionna LMMSE linear-algebra workaround can run
+on CPU. Environment and device records are saved for every run.

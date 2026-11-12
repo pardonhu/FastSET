@@ -36,7 +36,7 @@ def generate(args):
         "batches_per_snr",
         "batch_size",
     }
-    if set(config) != required or config["role"] not in {
+    if (set(config) - {"advance_batches_per_snr"}) != required or config["role"] not in {
         "source_train",
         "online_train",
         "validation",
@@ -56,6 +56,19 @@ def generate(args):
     rows = []
     # Retain the source generator's CPU channel/MatrixSquareRoot placement.
     with tf.device("/CPU:0"):
+        # Extend the original ten-batches-per-SNR pool using the campaign's
+        # RNG continuation. Smaller volume subsets share the same full pool.
+        if config.get("advance_batches_per_snr", 0):
+            for snr in range(4, 21):
+                warm_link = BasicConfig(
+                    tdl_model=config["tdl_model"],
+                    delay_spread=config["delay_spread_ns"] * 1e-9,
+                    min_speed=config["min_speed_m_s"],
+                    max_speed=config["max_speed_m_s"],
+                )
+                warm = BatchDataGenerator(warm_link, np.array([float(snr)]))
+                for _ in range(config["advance_batches_per_snr"]):
+                    warm.receive_data(32)
         for snr in config["snrs_db"]:
             link = BasicConfig(
                 tdl_model=config["tdl_model"],

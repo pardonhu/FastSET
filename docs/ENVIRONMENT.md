@@ -6,9 +6,10 @@
 - TensorFlow 2.15.1 / Sionna 0.19.2 / NumPy 1.26.4
 - Linux/WSL, NVIDIA RTX 3090 Ti
 
-GPU execution has two levels of status: the original campaign used this
-environment; the reorganized command wrappers still need their own numerical
-acceptance. CPU tests and wheel installation are checked separately.
+The public wrappers have their own GPU acceptance record in
+[RELEASE_STATUS.md](RELEASE_STATUS.md). Figure reproduction uses Matplotlib3.10.9
+and the bundled STIXGeneral fonts. CPU checks and GPU numerical checks are recorded
+separately.
 
 The CPU extra installs plotting/test dependencies only. The `gpu` extra adds
 the pinned TensorFlow/Sionna stack, including user-environment CUDA libraries.

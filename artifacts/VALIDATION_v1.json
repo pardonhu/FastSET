@@ -1,0 +1,128 @@
+{
+  "release": "v1.0.0",
+  "date": "2026-11-12",
+  "environment": {
+    "python": "3.10",
+    "tensorflow": "2.15.1",
+    "sionna": "0.19.2",
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.9",
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "platform": "Linux/WSL"
+  },
+  "cpu_tests": {
+    "passed": 30,
+    "clean_environment_install": true
+  },
+  "gpu_small_checks": [
+    {
+      "name": "online",
+      "exit_code": 0
+    },
+    {
+      "name": "timing",
+      "exit_code": 0
+    },
+    {
+      "name": "baselines",
+      "exit_code": 0
+    },
+    {
+      "name": "CNN",
+      "exit_code": 0
+    },
+    {
+      "name": "joint",
+      "exit_code": 0
+    },
+    {
+      "name": "batch16",
+      "exit_code": 0
+    },
+    {
+      "name": "batch64",
+      "exit_code": 0
+    },
+    {
+      "name": "backbone_transformer_split_source",
+      "exit_code": 0
+    },
+    {
+      "name": "backbone_transformer_split",
+      "exit_code": 0
+    },
+    {
+      "name": "backbone_mixer_e2e_source",
+      "exit_code": 0
+    },
+    {
+      "name": "backbone_mixer_e2e",
+      "exit_code": 0
+    }
+  ],
+  "rt_pipeline": {
+    "status": "complete",
+    "scope": "frozen-channel materialization; one source epoch/stage, one online iteration/stage, three resident timing repeats"
+  },
+  "final_checks": [
+    {
+      "name": "generate_tdl",
+      "exit_code": 0
+    },
+    {
+      "name": "a2b_online",
+      "exit_code": 0
+    },
+    {
+      "name": "timing",
+      "exit_code": 0
+    },
+    {
+      "name": "timing-breakdown",
+      "exit_code": 0
+    },
+    {
+      "name": "evaluate-trajectory",
+      "exit_code": 0
+    },
+    {
+      "name": "tdl_pipeline",
+      "exit_code": 0
+    }
+  ],
+  "a2b_full_validation": {
+    "frames": 3200,
+    "bits": 26054400,
+    "first_hit_stage": "est",
+    "first_hit_iteration": 1,
+    "bit_errors": 3927,
+    "paper_bit_errors": 3928,
+    "absolute_error_count_difference": 1,
+    "ber": 0.00015072310243183492
+  },
+  "timing": {
+    "repeats": 3,
+    "integer_counts_match_online": true,
+    "breakdown_integer_counts_match_online": true,
+    "components_sum_to_total": true,
+    "explicit_gpu_tensor_preparation_checked": true
+  },
+  "model_exports": {
+    "count": 101,
+    "source_reset_weights_unchanged": true
+  },
+  "figure_reproduction": {
+    "scripts": 16,
+    "pdfs": 53,
+    "groups": [
+      "main",
+      "supplement",
+      "differences"
+    ],
+    "clean_environment_pdf_count": 53
+  },
+  "scope": "Full source budgets for all 152 catalog entries were not rerun during packaging; measured outputs are archived, portable branches tested at the stated scales. Timing values depend on the new run hardware/software.",
+  "collector": {
+    "small_rt_run": "passed"
+  }
+}

@@ -1,135 +1,164 @@
-# Reproduction guide
+# Reproducing FastSET
 
-## Three distinct levels
+Run commands from the repository root. Use a fresh output directory for each run.
+The final submitted plots can be rebuilt with `scripts/reproduce_paper.py`; GPU
+experiments use the shared `fastset` package and the numerical configurations in
+`configs/experiments/`.
 
-1. **Replot measured results:** install CPU dependencies and run `fastset
-   paper-figures`. The bundled numbers are real measured data; no model is run.
-2. **Re-evaluate or adapt released checkpoints:** generate the TDL dataset using
-   `DATA_GENERATION.md`, then run the CLI with its assembled manifest. This
-   requires a GPU and the pinned environment. New portable runner acceptance
-   is still pending; fresh inputs need not reproduce archived BER exactly.
-3. **Retrain source models and rebuild datasets:** source pretraining is exposed
-   by the CLI; TDL generation creates a new dataset version. Exact paper input
-   reproduction requires the archived dataset, not merely the same seed.
-
-The release is not yet a complete level-2/3 artifact. A unified TDL suite now
-generates the inputs and assembled manifests locally; see `DATA_GENERATION.md`.
-The generation-to-results GPU validation, RT scene preparation and specialized
-experiment adapters remain listed in `RELEASE_STATUS.md` and `COVERAGE.md`.
-Examples below assume `fastset generate-suite` has produced `data/tdl_v1`.
-The archived manifests in `artifacts/manifests` are retained for provenance and
-can only be used if their original data payloads are already available.
-
-## Source pretraining
+## 1. Exact archived A2B inputs and pretrained models
 
 ```bash
-fastset pretrain --config configs/a2b_fastset.json \
-  --manifest data/tdl_v1/A2B.json --data-root data/tdl_v1 \
-  --gpu 0 --output results/source_A/run_001
+python scripts/download_assets.py --asset weights --output data/weights
+python scripts/download_assets.py --asset a2b-data --output data/a2b_archived
+python scripts/run_experiment.py --experiment A2B_d8_w64 \
+  --manifest data/a2b_archived/A2B_paper.json --data-root data/a2b_archived \
+  --gpu 0 --output results/a2b_001
 ```
 
-The split is randomly initialized with seed 42. An epoch traverses all 3,000
-source batches. The source SNR range is 4–18 dB inclusive. The model weights
-from the fixed final epoch are retained while Adam state and Sionna RNG are
-reset to their online initial states. The resulting `online_initial` checkpoint
-is the online source. Estimator pretraining uses channel MSE; demapper
-pretraining uses coded-bit BCE while the estimator is frozen.
+The A2B bundle preserves the original 170 adaptation batches, 100 validation
+batches, and 100 PEBS evaluation batches. Every original file is included with its SHA256 unchanged. Batch order is retained.
+Source pretraining frames are generated separately; the archived A2B bundle is an
+online-adaptation/evaluation dataset. The 8–64 and E2E source states are also
+included in Git. The larger Release model bundle includes 40 splits at two source
+budgets, Joint JP, alternative backbones, TDL-B and four RT source environments,
+and the four immutable main-experiment final models for independent testing.
 
-For CNN, use `configs/a2b_cnn.json`. For the separate Joint-pretraining control,
-use `configs/ablation/a2c_joint_pretraining_control.json`. That control updates
-both modules using MSE+BCE and a separate Adam per module, as in the measured
-campaign. It changes the pretraining treatment and must be labeled separately.
-
-This adapter saves each completed epoch but currently starts new runs only;
-automatic resume from an incomplete run has not been ported. Failed runs and
-their checkpoints are preserved. Do not claim unattended resumption support.
-
-## Online adaptation
-
-Use `online` with a source-pretrained **online_initial** checkpoint. Loaded Adam
-iteration counters must be zero. Every run evaluates its initial state, then
-evaluates after each update, including estimator updates. With `early_stop=true`,
-BER strictly below the target ends training before another update. A hit at
-iteration zero is represented honestly as zero adaptation steps.
-
-Inputs are shuffled with a seeded NumPy `RandomState`. `batch_order` is explicit:
-
-- `restart_each_stage`: demapper starts at the first shuffled batch again.
-  This preserves the main/selection experiment convention.
-- `global`: all methods consume the same permutation prefix; changing from
-  estimator to demapper does not rewind. This is the ablation convention.
-
-The portable adapter refuses budgets longer than the declared single
-permutation. It will not silently create a different repeated-data experiment.
-
-## Ablation
-
-Use `configs/ablation/a2c_{fastset,est_only,dem_only,joint,cnn}.json` in separate
-runs. All split-method runs use the same 8-64 source checkpoint. CNN uses its
-own source-pretrained checkpoint. A2C runs 84 iterations; A2B runs 50. FastSET
-uses estimator 5, then demapper for the remaining budget. Other methods update
-their declared module(s) throughout. Neither threshold stops these runs.
-
-Do not initialize the inactive module randomly in an `est_only` or `dem_only`
-comparison: that changes the question and removes the common pretrained receiver.
-
-## Timing replay
-
-After online adaptation, replay its saved trajectory in a new run directory:
+## 2. Generate another dataset
 
 ```bash
-fastset timing --config configs/a2b_fastset.json \
-  --manifest data/tdl_v1/A2B.json --data-root data/tdl_v1 \
-  --source artifacts/checkpoints/d8_w64/online_initial \
-  --trajectory results/a2b/run_001/iterations.csv \
-  --gpu 0 --output results/a2b_timing/run_001
+python scripts/prepare_data.py --case A2C --scale paper --gpu 0 \
+  --output data/tdl --plan-only
+python scripts/prepare_data.py --case A2C --scale paper --gpu 0 --output data/tdl
+python scripts/run_experiment.py --experiment A2C_CNN \
+  --manifest data/tdl/A2C_paper.json --data-root data/tdl \
+  --gpu 0 --output results/a2c_e2e_001
 ```
 
-Configuration, manifest, source checkpoint and source-code hashes must match the
-online trajectory. The timer performs no per-iteration BER evaluation. See
-`TIMING.md` before comparing the output to a paper table.
+Generation caches each complete split under a hash of its parameters. Identical
+source datasets are reused across cases. Failed or partial splits remain visible
+and are not silently treated as complete. TDL generation runs the channel's
+linear algebra on CPU, matching the supported MatrixSquareRoot placement, while
+neural updates and decoding execute on GPU. New random samples and different
+TensorFlow versions can change error counts; the archived input bundle identifies
+the exact A2B samples used in the submitted measurements.
 
-## Independent evaluation
+For an execution smoke test, use `--scale smoke` during preparation and `--smoke`
+on `run_experiment.py`. The latter reduces each active source stage to one epoch
+and each online stage to one iteration. The saved configuration records those
+smaller budgets.
 
-Use `evaluate` with the **selected online checkpoint**, a manifest containing an
-`evaluation` split, and the same receiver config. It computes BER separately for
-each declared SNR and preserves integer error/bit counts. It does not update the
-model or choose a new checkpoint on the evaluation set. Generated A2B/A2C manifests include an `evaluation` split with seed57 and the
-configured full SNR range. Archived manifests include only their original
-source/online/validation inventories; they are not replacements for generated
-evaluation manifests.
+## 3. Pretrain from scratch
 
-## GPU numerical acceptance before publication
+Add `--pretrain` to the experiment command. Source training always uses the
+source protocol, including seed42, batch32, and learning rate 1e-3. The online
+learning-rate and batch-order ablations do not change source pretraining.
+Each epoch saves a model. The final source weights are copied into a fresh online
+state with zero Adam iterations and the configured RNG seed.
 
-A small runnable software smoke can be prepared without loading the full data:
+For an existing TensorFlow source checkpoint with nonzero Adam iterations:
 
 ```bash
-python scripts/prepare_smoke.py --config configs/a2b_fastset.json \
-  --manifest data/tdl_v1/A2B.json --output results/smoke_inputs
-fastset online --config results/smoke_inputs/config.json \
-  --manifest results/smoke_inputs/manifest.json --data-root data/tdl_v1 \
-  --source artifacts/checkpoints/d8_w64/online_initial \
-  --gpu 0 --output results/smoke_run
+fastset reset-source --config configs/experiments/A2B_d8_w64.json \
+  --manifest data/a2b_archived/A2B_paper.json --data-root data/a2b_archived \
+  --source PATH/TO/SOURCE_PREFIX --gpu 0 --output results/reset_source_001
 ```
 
-The referenced three data files must exist. The smoke runs one estimator and
-one demapper iteration and evaluates one 32-frame batch; it is not a paper
-result and is not by itself an equivalence test. Use the CNN/Joint configs with
-their matching source states to prepare the corresponding two-step checks.
+The reset checks that every model weight remains unchanged. No training occurs.
+Pass the exported `results/reset_source_001/online_initial` to `--source`.
 
-Use an idle GPU, the pinned environment and independent fresh processes for the
-existing campaign worker and the new portable worker. Freeze the same source
-checkpoint, one training batch and one evaluation batch before starting. Compare:
+## 4. Offline PEBS selection
 
-1. all weight names/order/shapes and exact checkpoint readback;
-2. initial channel estimates, LLRs, and decoded bits;
-3. one estimator, one demapper, one CNN, and one Joint update: loss, gradients or
-   updated weights, with preset `rtol=1e-5, atol=1e-6`;
-4. decoded integer bit/block errors;
-5. a short complete trajectory with identical batch order and stop decisions.
+```bash
+python scripts/run_experiment.py --experiment pebs_d8_w64 \
+  --manifest data/a2b_archived/A2B_paper.json --data-root data/a2b_archived \
+  --gpu 0 --output results/pebs_d8_w64_001 --phases online timing pebs
+fastset pebs --alpha 0.8 --output results/archived_pebs_alpha08.csv
+```
 
-Do not adjust tolerance after seeing a mismatch. CPU source/AST checks and a
-successful package build cannot substitute for this test. Existing campaign
-validation remains valid for its original code; it does not automatically
-validate newly organized CLI orchestration.
+Repeat the first command for each `pebs_d*_w*` catalog entry. The online phase
+always completes 5 estimator + 20 demapper iterations. `pebs` evaluates every
+model with validation BER below 2e-4 on the separate evaluation samples at 12 dB.
+The timing phase restores the source model and repeats the recorded update
+sequence three times without BER checks or model writes. The second command
+recomputes the published ranking from the archived trajectory CSV. Its fixed E2E
+reference is iteration 50, evaluation BER 1.7563252272169e-4 and 10.196998199982772 s.
 
+## 5. Ablation, batch size, and training-pool size
+
+Use `--list --group ablation` for the seven methods and three batch-order seeds.
+Joint SP starts from the same sequentially pretrained weights as FastSET; Joint
+JP starts from separately jointly pretrained weights. Joint updates use MSE+BCE
+with unit coefficients and both module gradients. Fixed ablation budgets are 50
+A2B and 84 A2C total iterations.
+
+The batch-size experiment reads the same 32-frame storage files. Batch16 uses two
+successive halves; batch64 joins two successive files. Estimator and demapper
+streams restart as explicitly specified in the config. The data-volume study
+uses nested per-SNR subsets and cycles only when a declared small pool is
+exhausted. It records first-hit performance and retains the complete 25-iteration
+split / 100-iteration E2E trajectory.
+
+## 6. Ray-traced experiments
+
+```bash
+python scripts/prepare_data.py --case Paris_P1 --scale paper --gpu 0 \
+  --output data/rt
+python scripts/run_experiment.py --experiment Paris_P1_d8_w64 \
+  --manifest data/rt/Paris_P1_paper.json --data-root data/rt \
+  --gpu 0 --output results/paris_001
+```
+
+The repository includes the exact 512 source and 9 distinct target channel
+responses. `prepare_data.py` uses the original position/role/frame seed derivation
+and interference generator. Source frames are synthesized on demand. Adaptation,
+validation and test frames are materialized before timing, so random-sample
+synthesis is not charged as receiver input processing. The frozen-channel package
+requires no city mesh download or new position selection. RT validation uses 256
+frames and evaluation uses 3,200 frames per SNR.
+
+## 7. Conventional and source-domain evaluation
+
+```bash
+fastset baselines --config configs/experiments/A2B_d8_w64.json \
+  --manifest data/a2b_archived/A2B_paper.json --data-root data/a2b_archived \
+  --source results/a2b_001/online/iteration_001/checkpoint \
+  --split validation --gpu 0 --output results/a2b_baselines_001
+```
+
+This evaluates LS, Perfect CSI, and the adapted CNN estimator followed by
+LMMSE/APP/LDPC. `fastset evaluate --help` exposes `--split` and `--snrs`. Single-SNR
+TDL evaluation inputs are noise-scaled for paired SNR curves; H and bits remain
+fixed. A source-domain BER comparison uses a separately generated source-domain
+evaluation set and the pretrained models, with no target adaptation.
+
+For the supplementary independent check, prepare A2B/A2C with `--independent` and
+evaluate `data/weights/final/CASE/METHOD/online_initial` with `--snrs 12`. Those
+four files contain target-adapted final weights and are for evaluation only;
+training commands reject their nonzero Adam iteration counters.
+
+## Outputs and resource control
+
+Each phase contains `config.json`, `lineage.json`, `environment.json`, a full log,
+CSV results, and `result.json` or `failure.txt`. Online runs also save
+`batch_sequence.json` and every model. Integer bit/block errors and denominators
+are preserved. The experiment runner's `--resume` skips only complete phases
+whose top-level plan is unchanged; an interrupted phase is retained for diagnosis.
+Run another phase into a fresh directory when restarting an incomplete phase.
+
+Use separate experiment IDs/output directories on separate GPUs. A cooperative
+per-device lock and a current NVIDIA process check prevent this runner from
+starting on an occupied device. The runner never terminates another GPU process.
+Default CPU thread counts are limited to two. GPU memory grows on demand.
+
+## 8. Collect new measurements
+
+```bash
+python scripts/summarize_runs.py --runs results/pebs_d8_w64_001 results/pebs_CNN_001 \
+  --output results/new_measurements_001 --alpha 0.8
+```
+
+The collector joins integer error counts, saved-model iterations and local timing
+into `trajectories.csv`, `first_hits.csv`, `ber.csv`, and PEBS tables when the
+required phase outputs are present. PEBS requires the same dataset manifest for
+every input and one fixed E2E first-hit reference. Use `fastset plot` to plot a
+new CSV. Archived paper plots remain tied to the released measurements.

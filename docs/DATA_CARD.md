@@ -1,81 +1,55 @@
 # Data card
 
-## Link and supervision
+## TDL
 
-The shared receiver uses a single-stream OFDM link, 264 subcarriers, 14 OFDM
-symbols, pilot symbols 2 and 11, 16-QAM, and LDPC decoding. One stored batch
-contains 32 frames. Each frame has 8,142 information bits and 12,672 coded bits.
-100 stored batches therefore contain 3,200 frames and **26,054,400 information
-bits**. BER reports decoded information-bit errors, not coded-bit BCE.
+SISO OFDM uses 264 subcarriers, 14 symbols, 15 kHz spacing, a 16-sample cyclic
+prefix, pilots at symbols 2 and 11 (zero-based), 4 GHz carrier, 16-QAM, and 5G LDPC
+with 8,142 information bits and 12,672 coded bits per frame. The decoder uses the
+original Sionna configuration. `link.py` retains the original implementation's
+semantic fingerprint.
 
-Estimator adaptation uses simulator channel labels and demapper adaptation uses
-transmitted coded-bit labels. This is a supervised adaptation experiment; it is
-not a demonstration that these labels are available without overhead in a deployed
-receiver. The true channel argument is not used as an estimator forward input.
+Source A uses 50 ns delay spread and speeds 0–1.5 m/s. Source B uses 150 ns and
+0–3 m/s. The standard target B uses 500 ns and 0–5 m/s; target C uses 1,000 ns and
+0–10 m/s. `configs/datasets.json` specifies the delay and speed variants.
 
-## TDL domains
+Source training has 200 stored batches per SNR from 4 to 18 dB. Standard online
+training has ten batches per SNR from 4 to 20 dB. Each stored batch contains 32
+frames. Validation and PEBS evaluation each use 100 batches at 12 dB. Main SNR
+curves keep bits/channel fixed and scale the recorded AWGN variance. Main TDL
+curves use the validation samples; PEBS uses a separate evaluation stream.
+Independent final evaluation uses seed20261110, with no reselection or training.
 
-| Domain | Model | Delay spread | Speed range |
-|---|---|---|---|
-| A | TDL-A | 50 ns | 0–1.5 m/s |
-| B | TDL-B | 500 ns | 0–5 m/s |
-| C | TDL-C | 1,000 ns | 0–10 m/s |
+The original A2B online/validation/PEBS files are distributed as a versioned
+Release asset, verified against their original SHA256 values. Regeneration uses
+explicit seeds and recipes. Exact sampled arrays also depend on generator call
+order and software version. Results from newly generated inputs are saved as a
+separate run, never substituted into the archived paper CSVs.
 
-Source training: 200 batches/SNR at 4–18 dB, 3,000 batches total.
-Online training: 10 batches/SNR at 4–20 dB, 170 batches total.
-Validation: 100 batches at 12 dB, historical seed 56 stream.
-Independent evaluation uses separate data (including seed 57 in PEBS). Seed 32
-diagnostics are not substituted for the frozen paper protocol.
+## RT
 
-The `snr` field retains the experiment's axis label. The generator supplies it
-to Sionna's `ebnodb2no`; it is the generator's Eb/N0 control, not an independently
-measured post-channel receive SNR. Do not silently reinterpret the axis.
+`artifacts/rt/` contains 512 source propagation responses (128 per city) and nine
+unique fixed target responses. Some target responses are reused in cross-city
+comparisons. The target geometry is fixed; different payload, noise and
+interference realizations are generated using the original per-frame seed rule.
+This is not 3,200 independently selected propagation positions.
 
-## Files and manifests
+Source pretraining uses 50 signal realizations per link and SNR, giving 96,000
+frames per epoch. Target adaptation cycles through 4–18 dB, restarting the SNR
+sequence at the demapper stage. Validation uses 256 frames at 12 dB; final testing
+uses 3,200 frames per SNR. Target narrowband QPSK interference occupies 33 of 264
+subcarriers starting at index116, with SIR15 dB. Source data have no added
+interference. The delay cases rescale the target path delays with the remaining
+propagation and interference settings fixed. The released arrays freeze the
+resulting channel responses.
 
-Legacy arrays are read with a restricted NumPy pickle reader. Arbitrary Python
-objects, nonfinite arrays and trailing content are rejected. Pickles remain
-large untrusted inputs; consume only distributed, verified artifacts.
+RT frame generation and model execution use independent validation/test roles.
+Exact internal position IDs are preserved because they enter the random seed.
+The documentation maps those IDs to the paper's P1/P2 labels.
 
-Required keys are `ebno_db`, `batch_b`, `batch_tx_codeword_bits`, `batch_x_rg`,
-`batch_pilots_rg`, `batch_h_freq`, `batch_y`, `batch_N0`, and `batch_h_ls_est`.
-Each manifest entry declares a relative path, SNR, and a SHA256 when available.
-Absolute paths and paths escaping the data root are rejected.
+## Integrity
 
-`artifacts/manifests/A2B.json` and `A2C.json` preserve existing batch order and
-online/validation file hashes. The historical source-training inventory did
-not hash every source file; these hashes are **missing, not fabricated**.
-`--verify-hashes` rejects such an incomplete archival inventory. The unified
-generation suite hashes every newly written file and creates complete manifests;
-use those manifests when rerunning with generated data.
-
-No dataset payload is included in this code directory. Source training alone
-is approximately 22.2 GB in the current uncompressed pickle format. The distribution uses generation scripts instead of hosted raw datasets;
-see `DATA_GENERATION.md`. Do not commit the full data tree into Git history.
-
-## Generation versus exact reproduction
-
-`fastset generate --config configs/data/B_validation.json --gpu 0 --output
-results/new_B_validation` creates a **new dataset version**. Equal seeds are
-insufficient to promise equality to archived data: earlier generator calls,
-SNR traversal and library versions affect RNG streams. Never mix fresh inputs
-and archived results under the same dataset identifier.
-
-Generation outputs one role per run. To combine roles, preserve each run's
-relative directory under one data root and prefix the manifest paths accordingly.
-Use disjoint validation/evaluation seeds and never use evaluation data to stop.
-
-## Ray tracing
-
-RT CSVs include Paris P2/P3, other-city target conditions, cross-city adaptation,
-and delay experiments. These are controlled constructed conditions, including
-channel transformations and interference, not untouched measured urban traces.
-Selected receiver positions and difficulty settings were explored during study
-design; do not claim blind environment selection.
-
-Exact scene meshes, positions, ray-tracing parameters, channel transformations,
-interference parameters and per-role RNG streams must be released together.
-Their packaging and asset licensing are not yet complete in this candidate.
-The generic receiver can consume RT batches in the same schema, but this does
-not make the full RT scene-generation pipeline publicly reproducible yet.
-
+Input manifests record role, SNR, relative file path and SHA256. Path traversal,
+unexpected pickle globals, cross-role sample overlap, invalid channels and
+nonfinite input arrays are rejected. Only known NumPy-array pickle constructors
+are accepted. All downloaded archives are verified before extraction; symlinks
+and files outside the output root are rejected.

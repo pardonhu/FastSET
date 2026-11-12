@@ -39,21 +39,49 @@ def parser():
     paper = sub.add_parser("paper-figures", help="Regenerate figures from bundled measured CSVs")
     paper.add_argument("--artifacts", type=Path, default=Path("artifacts"))
     paper.add_argument("--output", type=Path, default=Path("results/paper_figures"))
-    pebs = sub.add_parser("pebs", help="Recompute PEBS from frozen first-hit measurements")
-    pebs.add_argument("--csv", type=Path, default=Path("artifacts/tables/pebs_first_hit.csv"))
+    pebs = sub.add_parser(
+        "pebs", help="Recompute maximum qualifying-model PEBS for the submitted paper"
+    )
+    pebs.add_argument("--csv", type=Path, default=Path("paper/tables/plot_pebs_DATA_CSV.csv"))
     pebs.add_argument("--output", type=Path, required=True)
     pebs.add_argument("--alpha", type=float, default=0.8)
-    for name in ("pretrain", "online", "evaluate", "timing"):
+    for name in (
+        "pretrain",
+        "online",
+        "evaluate",
+        "evaluate-trajectory",
+        "timing",
+        "timing-breakdown",
+        "materialize-rt",
+        "reset-source",
+        "baselines",
+    ):
         item = sub.add_parser(name)
         item.add_argument("--config", type=Path, required=True)
         item.add_argument("--manifest", type=Path, required=True)
         item.add_argument("--data-root", type=Path, required=True)
         item.add_argument("--output", type=Path, required=True)
         item.add_argument("--gpu", required=True, help="Explicit device index or GPU UUID")
-        item.add_argument("--source", type=Path, required=name != "pretrain")
+        item.add_argument(
+            "--source", type=Path, required=name not in ("pretrain", "materialize-rt")
+        )
         item.add_argument("--verify-hashes", action="store_true")
         item.add_argument("--_worker", action="store_true", help=argparse.SUPPRESS)
-        if name == "timing":
+        if name in ("evaluate", "baselines"):
+            item.add_argument("--snrs", type=float, nargs="+", default=list(range(4, 19)))
+            item.add_argument(
+                "--split",
+                choices=["validation", "evaluation", "source_train"],
+                default="evaluation",
+            )
+        if name == "baselines":
+            item.add_argument(
+                "--methods",
+                nargs="+",
+                choices=["LS", "Perfect", "CNNEst"],
+                default=["LS", "Perfect", "CNNEst"],
+            )
+        if name in ("timing", "timing-breakdown", "evaluate-trajectory"):
             item.add_argument("--trajectory", type=Path, required=True)
     gen = sub.add_parser(
         "generate", help="Generate a separately versioned TDL dataset; not paper-identical"
@@ -136,9 +164,8 @@ def main():
 
         plot_csv(args)
     elif args.command == "paper-figures":
-        from .plotting import paper_figures
-
-        paper_figures(args.artifacts, args.output)
+        script = Path(__file__).resolve().parents[2] / "scripts/reproduce_paper.py"
+        subprocess.run([sys.executable, str(script), "--output", str(args.output)], check=True)
     elif args.command == "pebs":
         from .selection import summarize
 
@@ -151,7 +178,11 @@ def main():
         launch(args)
     else:
         try:
-            if args.command == "generate":
+            if args.command == "materialize-rt":
+                from .rt.materialize import run
+
+                run(args)
+            elif args.command == "generate":
                 from .generation import generate
 
                 generate(args)

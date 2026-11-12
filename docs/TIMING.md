@@ -1,42 +1,35 @@
-# Timing definitions
+# Adaptation computation time
 
-Do not use elapsed time between logged BER points as training time. LDPC/BER
-evaluation may dominate that interval, and Joint performs more work per iteration
-than an estimator-only update.
+The receiver is resident and warmed before measurement. Timing begins immediately
+before adaptation inputs are read. File reading, deserialization and checks,
+tensor preparation/transfer, optimizer updates, and device synchronization are
+included. BER/LDPC evaluation, model loading, compilation, model saving, and log
+writing are outside the timed interval. Normal OS file caching is retained.
 
-## Existing artifact families
+`fastset timing` restores the same source weights and zero-state online Adam,
+then executes the exact recorded batch plan three times. Both stages and input
+indices are checked against the online trajectory. The code, config, input
+manifest and source model hashes must match. The final integer BER counts are
+compared with the online run and reported explicitly. Repetitions also compare
+final weights. Each cumulative result uses the components of the trial with
+median cumulative total, so component values sum to the reported time.
 
-- Ablation `total_seconds`: median cumulative training replay plus separately
-  measured median cumulative input time, three repetitions. Input includes
-  file read, deserialization and validation. Training includes tensor conversion,
-  device transfer, forward/backward pass, Adam update and synchronization.
-- PEBS `total_seconds`: the corresponding frozen input-inclusive timing table.
-  Its original compute-only field remains visible for provenance.
-- `timing_summary.csv` and `timing_all_repeats.csv`: later continuous resident
-  timing diagnostics with explicit read/deserialize/tensor/update components.
-  These may differ from the historical main-table timing. They are separate
-  measurements, not values to mix or average with the earlier table.
+`fastset timing-breakdown` accepts the same arguments. For the CNN/split models,
+`timing_repeats.csv` separates `read_seconds`, `deserialize_check_seconds`,
+`tensor_prepare_seconds`, and `compute_seconds`. These add to the per-iteration
+elapsed time. A separate instrumented replay generates a timing decomposition;
+its total can differ from the minimally instrumented measurement. The archived
+Table II measurements remain available in `paper/tables/` and `plot_timing.py`.
 
-The source CSV field names and provenance must remain attached to a plotted
-comparison. Use the same timing definition and hardware for all methods in
-that comparison.
+The paper's archived trajectories and Table II were measured on one RTX 3090 Ti.
+Source training performed on other GPUs does not supply published time values.
+A reproduction on another machine should report that machine and its own times.
+Use the original A2B pickle bundle for comparable input handling; compressed NumPy
+input files add decompression to the measured input processing.
 
-## Portable `fastset timing`
-
-The new adapter implements the ablation-style separated input/training replay.
-It measures actual input work for the selected batches, warms graph execution,
-restores the same source checkpoint before each of three repetitions, and
-synchronizes the GPU around updates. It reports per-iteration samples and the
-sum of the two cumulative medians. This sum is **not** a continuous end-to-end
-latency measurement. The ordinary operating-system page cache is left intact.
-
-It excludes BER/LDPC evaluation, compilation warmup, checkpoint and log writing,
-data generation, network transfers and initial model construction. Final BER is
-checked outside the timer; any integer-count difference from the online run is
-reported, not hidden. Cross-version/device timing replays may need numerical
-investigation before they support a comparison.
-
-The portable adapter does not implement the newer continuous component-timing
-diagnostic as an identical replacement. That specialized adapter remains a
-release gap. Original measured CSVs are included unchanged numerically.
-
+The supplementary checking-frequency figure is an estimate. It adds the declared
+mean BER-evaluation cost (16.39 s/check) to recorded training/input time according
+to each checking interval. `plot_check_frequency.py` retains the arithmetic and
+labels; the estimate is separate from measured receiver computation time. The
+fixed-time figure associates each saved model's BER with cumulative measured
+adaptation time and does not invent intermediate trained models.

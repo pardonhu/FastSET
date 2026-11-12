@@ -2,6 +2,8 @@
 
 import hashlib
 import pickle
+import io
+import time
 from pathlib import Path
 import numpy as np
 
@@ -14,7 +16,20 @@ def sha(path):
     return h.hexdigest()
 
 
-def read_arrays(path):
+def read_arrays(path, timings=None):
+    start = time.perf_counter()
+    raw = Path(path).read_bytes()
+    if timings is not None:
+        timings["read_seconds"] = timings.get("read_seconds", 0.0) + time.perf_counter() - start
+
+    if Path(path).suffix == ".npz":
+        with np.load(io.BytesIO(raw), allow_pickle=False) as archive:
+            obj = {key: archive[key].copy() for key in archive.files}
+        if not obj or any(
+            v.dtype.kind not in "fciu" or not np.isfinite(v).all() for v in obj.values()
+        ):
+            raise ValueError("Expected finite numeric arrays")
+        return obj
     allowed = {
         ("numpy.core.multiarray", "_reconstruct"): np.core.multiarray._reconstruct,
         ("numpy", "ndarray"): np.ndarray,
@@ -28,7 +43,7 @@ def read_arrays(path):
                 raise ValueError("Rejected pickle global: " + module + "." + name)
             return allowed[module, name]
 
-    with Path(path).open("rb") as stream:
+    with io.BytesIO(raw) as stream:
         obj = Restricted(stream).load()
         if stream.read(1):
             raise ValueError("Trailing pickle content")

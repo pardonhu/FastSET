@@ -37,6 +37,16 @@ for item in json.loads((root / "artifacts/INDEX.json").read_text()):
     path = root / item["path"]
     if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != item["sha256"]:
         failures.append("artifact hash mismatch: " + item["path"])
+for item in json.loads((root / "paper/INDEX.json").read_text())["tables"]:
+    path = root / item["path"]
+    if hashlib.sha256(path.read_bytes()).hexdigest() != item["sha256"]:
+        failures.append("paper data hash mismatch: " + item["path"])
+for item in json.loads((root / "paper/INDEX.json").read_text())["plot_sources"]:
+    if hashlib.sha256((root / item["path"]).read_bytes()).hexdigest() != item["export_sha256"]:
+        failures.append("plot source hash mismatch: " + item["path"])
+for item in json.loads((root / "artifacts/rt/INDEX.json").read_text()):
+    if hashlib.sha256((root / item["path"]).read_bytes()).hexdigest() != item["sha256"]:
+        failures.append("RT asset hash mismatch: " + item["path"])
 print(
     json.dumps(
         {
@@ -44,7 +54,7 @@ print(
             "bytes": sum(p.stat().st_size for p in files),
             "hygiene_and_integrity_pass": not failures,
             "failures": failures,
-            "scope": "not a license approval or GPU numerical acceptance",
+            "scope": "public-file hygiene, numerical-source and channel-asset integrity",
         },
         indent=2,
     )
